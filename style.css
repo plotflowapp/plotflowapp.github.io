@@ -1369,3 +1369,8 @@ h2{
     transform:translateY(0);
 
 }
+.faq-answer p{
+
+    margin:0;
+
+}
