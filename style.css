@@ -278,7 +278,11 @@ p{
 
     display:flex;
 
+    align-items:center;
+
     gap:34px;
+
+    margin-left:auto;
 
 }
 
