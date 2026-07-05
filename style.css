@@ -393,35 +393,49 @@ p{
 }
 
 .hero-card{
+    position:relative;
+    z-index:2;
+}
 
-    background:white;
-
-    border-radius:22px;
-
-    padding:24px;
-
-    box-shadow:var(--shadow-large);
-
+.hero-card img{
+    width:100%;
+    max-width:500px;
+    border-radius:16px;
+    box-shadow:0 20px 55px rgba(0,0,0,.12);
 }
 
 .floating-dialog{
 
     position:absolute;
 
-    width:280px;
+    right:-35px;
 
-    right:-40px;
+    top:320px;
 
-    bottom:-30px;
+    width:210px;
 
-    border-radius:18px;
+    transform:rotate(-3deg);
 
-    overflow:hidden;
+    transition:.3s ease;
 
-    box-shadow:var(--shadow-large);
+    z-index:3;
+}
+.floating-dialog img{
 
+    width:100%;
+
+    display:block;
+
+    border-radius:14px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
 }
 
+.floating-dialog:hover{
+
+    transform:rotate(0deg) scale(1.03);
+
+}
 
 
 /* ==========================================================
