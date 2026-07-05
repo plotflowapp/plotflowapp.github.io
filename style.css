@@ -1362,3 +1362,26 @@ h2{
     transform:rotate(45deg);
 
 }
+/* ==========================================
+   Scroll Reveal
+========================================== */
+
+.hidden{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
