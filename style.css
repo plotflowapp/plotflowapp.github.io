@@ -162,6 +162,10 @@ p{
 
     font-weight:600;
 
+    white-space:nowrap;
+
+    min-width:190px;
+
 }
 
 .button.large{
