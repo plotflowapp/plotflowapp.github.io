@@ -9,9 +9,14 @@
     <title>PlotFlow — Professional PDF Publishing for AutoCAD</title>
 
     <meta name="description"
-        content="Fast PDF publishing for AutoCAD. Export dozens of layouts in seconds with smart naming, reusable presets and batch processing.">
+        content="Fast PDF publishing for AutoCAD. Batch export layouts with smart filename templates, export presets and a clean workflow.">
 
     <meta name="theme-color" content="#35516D">
+
+    <meta property="og:title" content="PlotFlow">
+    <meta property="og:description"
+        content="Professional PDF Publishing for AutoCAD">
+    <meta property="og:type" content="website">
 
     <link rel="icon" href="assets/logo/favicon.svg">
 
@@ -28,19 +33,19 @@
 
 <body>
 
-<header>
+<header class="site-header">
 
 <div class="container">
 
 <a class="logo" href="#">
 
-<div class="logoMark"></div>
+<div class="logo-square"></div>
 
 <span>PlotFlow</span>
 
 </a>
 
-<nav>
+<nav class="navigation">
 
 <a href="#features">Features</a>
 
@@ -52,11 +57,19 @@
 
 </nav>
 
-<div class="headerButtons">
+<div class="header-actions">
 
-<a class="btnGhost" href="#">Documentation</a>
+<a class="button secondary" href="#">
 
-<a class="btnPrimary" href="#">Download Trial</a>
+Documentation
+
+</a>
+
+<a class="button primary" href="#download">
+
+Start Free Trial
+
+</a>
 
 </div>
 
@@ -66,13 +79,17 @@
 
 
 
+<main>
+
+
+
 <section class="hero">
 
-<div class="container heroGrid">
+<div class="container hero-grid">
 
-<div class="heroLeft">
+<div class="hero-left">
 
-<div class="heroBadge">
+<div class="badge">
 
 Native AutoCAD Plugin
 
@@ -90,23 +107,27 @@ to PDF
 
 <p>
 
-Batch export dozens of layouts with smart filename templates,
+Export dozens of layouts with reusable presets,
 
-saved export profiles and a workflow that feels completely native
+smart filename templates and a workflow
 
-to AutoCAD.
+that feels completely native to AutoCAD.
 
 </p>
 
-<div class="heroButtons">
+<div class="hero-buttons">
 
-<a class="btnPrimary large" href="#download">
+<a href="#download"
 
-Download Trial
+class="button primary large">
+
+Start Free Trial
 
 </a>
 
-<a class="btnSecondary large" href="#">
+<a href="#"
+
+class="button outline large">
 
 Watch Demo
 
@@ -114,49 +135,41 @@ Watch Demo
 
 </div>
 
-<div class="heroBenefits">
+<div class="hero-benefits">
 
-<div>
+<div>✓ AutoCAD 2018–2026</div>
 
-✓ AutoCAD 2018–2026
+<div>✓ Native Interface</div>
 
-</div>
+<div>✓ Works Offline</div>
 
-<div>
-
-✓ Works Offline
-
-</div>
-
-<div>
-
-✓ Native Interface
-
-</div>
-
-<div>
-
-✓ Batch Export
+<div>✓ Batch Export</div>
 
 </div>
 
 </div>
 
-</div>
 
-<div class="heroRight">
 
-<div class="heroWindow">
+<div class="hero-right">
 
-<img src="assets/screenshots/main-ui.png"
+<div class="hero-card">
+
+<img
+
+src="assets/screenshots/main-ui.png"
 
 alt="PlotFlow Interface">
 
 </div>
 
-<div class="floatingWindow">
 
-<img src="assets/screenshots/export-result.png"
+
+<div class="floating-dialog">
+
+<img
+
+src="assets/screenshots/export-result.png"
 
 alt="Export Complete">
 
@@ -170,7 +183,7 @@ alt="Export Complete">
 
 
 
-<section class="trustBar">
+<section class="compatibility">
 
 <div class="container">
 
@@ -215,6 +228,109 @@ Compatible with
 </p>
 
 </div>
+    <!-- ===================================================== -->
+<!-- FEATURES -->
+<!-- ===================================================== -->
+
+<section id="features" class="features">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                WHY PLOTFLOW
+            </span>
+
+            <h2>
+                Everything you need for
+                professional PDF publishing.
+            </h2>
+
+            <p>
+                PlotFlow removes repetitive work and gives you a clean,
+                reliable workflow directly inside AutoCAD.
+            </p>
+
+        </div>
+
+        <div class="features-grid">
+
+            <article class="feature-card">
+
+                <div class="feature-icon">⚡</div>
+
+                <h3>Batch Export</h3>
+
+                <p>
+                    Publish dozens of layouts with a single click.
+                </p>
+
+            </article>
+
+            <article class="feature-card">
+
+                <div class="feature-icon">📄</div>
+
+                <h3>Smart File Names</h3>
+
+                <p>
+                    Generate meaningful filenames automatically using templates.
+                </p>
+
+            </article>
+
+            <article class="feature-card">
+
+                <div class="feature-icon">📁</div>
+
+                <h3>Export Presets</h3>
+
+                <p>
+                    Save export settings once and reuse them for every project.
+                </p>
+
+            </article>
+
+            <article class="feature-card">
+
+                <div class="feature-icon">🖥️</div>
+
+                <h3>Native AutoCAD UI</h3>
+
+                <p>
+                    Familiar interface that feels like a built-in AutoCAD tool.
+                </p>
+
+            </article>
+
+            <article class="feature-card">
+
+                <div class="feature-icon">📦</div>
+
+                <h3>Single or Multiple PDFs</h3>
+
+                <p>
+                    Export the whole project into one PDF or create separate files.
+                </p>
+
+            </article>
+
+            <article class="feature-card">
+
+                <div class="feature-icon">🔒</div>
+
+                <h3>Works Offline</h3>
+
+                <p>
+                    No cloud services. No subscriptions. No internet required.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -222,45 +338,196 @@ Compatible with
 
 
 
-<section id="showcase" class="showcase">
+<!-- ===================================================== -->
+<!-- SHOWCASE -->
+<!-- ===================================================== -->
+
+<section class="showcase">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+
+                REAL INTERFACE
+
+            </span>
+
+            <h2>
+
+                See PlotFlow in action
+
+            </h2>
+
+            <p>
+
+                What you see is the actual application.
+                No mockups. No fake UI.
+
+            </p>
+
+        </div>
+
+        <div class="showcase-grid">
+
+            <div class="showcase-large">
+
+                <img src="assets/screenshots/main-ui.png"
+                     alt="PlotFlow Main Window">
+
+            </div>
+
+            <div class="showcase-small">
+
+                <img src="assets/screenshots/export-result.png"
+                     alt="Export Complete">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ===================================================== -->
+<!-- WORKFLOW -->
+<!-- ===================================================== -->
+
+<section id="workflow" class="workflow">
 
 <div class="container">
 
-<div class="sectionTitle">
+<div class="section-header">
+
+<span class="section-tag">
+
+WORKFLOW
+
+</span>
 
 <h2>
 
-See PlotFlow in Action
+From drawing to PDF
+in four simple steps.
 
 </h2>
 
 <p>
 
-Real screenshots.
-
-Real workflow.
-
-No marketing mockups.
+Designed to eliminate repetitive publishing
+and save time every day.
 
 </p>
 
 </div>
 
-<div class="showcaseGrid">
+<div class="timeline">
 
-<div class="showcaseCard large">
+<div class="step">
 
-<img src="assets/screenshots/main-ui.png"
+<div class="step-number">
 
-alt="Main Interface">
+1
 
 </div>
 
-<div class="showcaseCard">
+<h3>
 
-<img src="assets/screenshots/export-result.png"
+Open Drawing
 
-alt="Export Complete">
+</h3>
+
+<p>
+
+Open your AutoCAD drawing
+containing all layouts.
+
+</p>
+
+</div>
+
+<div class="step-line"></div>
+
+<div class="step">
+
+<div class="step-number">
+
+2
+
+</div>
+
+<h3>
+
+Select Layouts
+
+</h3>
+
+<p>
+
+Choose one,
+multiple,
+or all layouts.
+
+</p>
+
+</div>
+
+<div class="step-line"></div>
+
+<div class="step">
+
+<div class="step-number">
+
+3
+
+</div>
+
+<h3>
+
+Configure Export
+
+</h3>
+
+<p>
+
+Filename template,
+presets
+and export options.
+
+</p>
+
+</div>
+
+<div class="step-line"></div>
+
+<div class="step">
+
+<div class="step-number">
+
+4
+
+</div>
+
+<h3>
+
+Export PDF
+
+</h3>
+
+<p>
+
+One click.
+
+Professional PDFs
+ready to deliver.
+
+</p>
 
 </div>
 
@@ -269,18 +536,285 @@ alt="Export Complete">
 </div>
 
 </section>
-<footer>
+    <!-- ===================================================== -->
+<!-- DOWNLOAD CTA -->
+<!-- ===================================================== -->
+
+<section id="download" class="download">
+
+    <div class="container">
+
+        <div class="download-card">
+
+            <span class="section-tag">
+
+                START TODAY
+
+            </span>
+
+            <h2>
+
+                Ready to speed up your PDF workflow?
+
+            </h2>
+
+            <p>
+
+                Try PlotFlow free and see how much time
+                you can save on every project.
+
+            </p>
+
+            <div class="download-buttons">
+
+                <a href="#" class="button primary large">
+
+                    Start Free Trial
+
+                </a>
+
+                <a href="#" class="button outline large">
+
+                    Documentation
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- FAQ -->
+<!-- ===================================================== -->
+
+<section id="faq" class="faq">
 
 <div class="container">
 
-<p>© 2026 PlotFlow</p>
+<div class="section-header">
+
+<span class="section-tag">
+
+FAQ
+
+</span>
+
+<h2>
+
+Frequently Asked Questions
+
+</h2>
+
+<p>
+
+Everything you need to know before using PlotFlow.
+
+</p>
+
+</div>
+
+<div class="faq-list">
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Which AutoCAD versions are supported?
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+PlotFlow supports AutoCAD 2018 through AutoCAD 2026.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Does PlotFlow require Internet access?
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+No. PlotFlow works completely offline after installation.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Can I export one PDF or separate PDFs?
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Both options are available. You can export a single combined PDF or create separate files.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Can I save export presets?
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Yes. Export presets allow you to reuse the same settings for future projects.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
+
+<footer class="footer">
+
+<div class="container footer-grid">
+
+<div>
+
+<h3>
+
+PlotFlow
+
+</h3>
+
+<p>
+
+Professional PDF Publishing for AutoCAD.
+
+Built for architects,
+engineers
+and CAD professionals.
+
+</p>
+
+</div>
+
+<div>
+
+<h4>
+
+Product
+
+</h4>
+
+<ul>
+
+<li><a href="#features">Features</a></li>
+
+<li><a href="#workflow">Workflow</a></li>
+
+<li><a href="#download">Start Free Trial</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>
+
+Resources
+
+</h4>
+
+<ul>
+
+<li><a href="#">Documentation</a></li>
+
+<li><a href="#">Release Notes</a></li>
+
+<li><a href="#">Privacy Policy</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>
+
+Support
+
+</h4>
+
+<ul>
+
+<li><a href="#">Contact</a></li>
+
+<li><a href="#">GitHub</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="container footer-bottom">
+
+<p>
+
+© 2026 PlotFlow. All rights reserved.
+
+</p>
 
 </div>
 
 </footer>
+
+</main>
 
 <script src="script.js"></script>
 
 </body>
 
 </html>
+
+</section>
