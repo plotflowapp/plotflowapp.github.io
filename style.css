@@ -617,47 +617,23 @@ p{
 
 }
 
-.showcase-grid{
+.showcase{
 
-    display:grid;
-
-    grid-template-columns:1fr 1.3fr;
-
-    gap:34px;
-
-    align-items:start;
-
-}
-
-.showcase-large{
+    padding:120px 0;
 
     background:#fff;
 
-    border-radius:24px;
-
-    padding:28px;
-
-    border:1px solid var(--border);
-
-    box-shadow:var(--shadow-large);
-
 }
 
-.showcase-small{
+.showcase-demo{
 
-    background:#fff;
+    position:relative;
 
-    border-radius:22px;
+    width:100%;
 
-    padding:24px;
+    max-width:760px;
 
-    border:1px solid var(--border);
-
-    box-shadow:var(--shadow-medium);
-
-    position:sticky;
-
-    top:120px;
+    margin:70px auto 50px;
 
 }
 
