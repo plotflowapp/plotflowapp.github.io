@@ -1279,3 +1279,26 @@ h2{
 }
 
 }
+.result-badge{
+
+    position:absolute;
+
+    top:-18px;
+
+    left:-20px;
+
+    background:#fff;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    color:#334e68;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
