@@ -55,6 +55,12 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll("section").forEach(section => {
 
+    if(section.classList.contains("hero")){
+
+        return;
+
+    }
+
     section.classList.add("hidden");
 
     observer.observe(section);
