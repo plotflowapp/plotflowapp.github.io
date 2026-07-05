@@ -885,7 +885,9 @@ p{
 
 .faq-item:hover{
 
-    box-shadow:var(--shadow-small);
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow-medium);
 
 }
 
