@@ -1306,13 +1306,9 @@ h2{
 
 .faq-icon{
 
-    font-size:26px;
+    font-size:20px;
 
-    color:var(--primary);
-
-    transition:.3s;
-
-    flex-shrink:0;
+    font-weight:600;
 
 }
 
@@ -1335,7 +1331,7 @@ h2{
 
 .faq-item.active .faq-answer{
 
-    max-height:180px;
+    max-height:300px;
 
     padding:0 30px 26px;
 
