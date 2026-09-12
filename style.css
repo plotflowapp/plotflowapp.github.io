@@ -262,16 +262,20 @@ p{
 
 }
 
-.logo-square{
+.logo-square {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
 
-    width:38px;
-
-    height:38px;
-
-    border-radius:10px;
-
-    background:var(--primary);
-
+.logo-square img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 .navigation{
