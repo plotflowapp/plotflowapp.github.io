@@ -268,14 +268,16 @@ p{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     overflow: hidden;
 }
 
 .logo-square img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    width: 38px;
+    height: 38px;
     display: block;
+    object-fit: contain;
+    image-rendering: auto;
 }
 
 .navigation{
