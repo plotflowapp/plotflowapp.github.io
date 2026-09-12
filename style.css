@@ -270,7 +270,6 @@ p{
     justify-content: center;
     flex-shrink: 0;
     overflow: hidden;
-    border-radius: 8px;
 }
 
 .logo-square img {
