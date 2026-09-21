@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ai2tex is a free 3ds Max tool for baking AI-generated model textures onto retopologized meshes.">
+  <meta name="theme-color" content="#0b0d12">
+  <title>ai2tex — AI 3D Texture Transfer Tool</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#" aria-label="ai2tex home">
+        <img src="assets/logo.svg" alt="" class="brand-mark">
+        <span>ai<span class="brand-two">2</span>tex</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#how-it-works">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#download">Download</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="nav-cta" href="#download">Download free</a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="dot"></span> Free 3ds Max tool</div>
+          <h1>Keep your AI model's texture after retopology.</h1>
+          <p class="hero-lead">
+            ai2tex bakes the original Base Color onto your optimized mesh and its new UV layout — directly inside 3ds Max.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#download">Download free <span>↓</span></a>
+            <a class="button button-ghost" href="#how-it-works">See how it works <span>↓</span></a>
+          </div>
+          <div class="hero-meta">
+            <span>Free</span>
+            <span>3ds Max 2025+</span>
+            <span>Windows</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="AI model to optimized mesh workflow illustration">
+          <div class="visual-glow"></div>
+          <div class="model-card source-card">
+            <div class="card-label">SOURCE</div>
+            <div class="mesh-art dense-mesh">
+              <div class="mesh-sphere"></div>
+              <div class="mesh-lines"></div>
+            </div>
+            <strong>AI-generated model</strong>
+            <small>Dense geometry · original texture</small>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="model-card target-card">
+            <div class="card-label">TARGET</div>
+            <div class="mesh-art clean-mesh">
+              <div class="mesh-sphere"></div>
+              <div class="mesh-lines"></div>
+            </div>
+            <strong>Optimized mesh</strong>
+            <small>New UV · baked Base Color</small>
+          </div>
+          <div class="bake-pill"><span>✦</span> BAKE WITH AI2TEX</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem section">
+      <div class="container narrow">
+        <div class="section-kicker">THE PROBLEM</div>
+        <h2>AI models look great. Their UVs often don't.</h2>
+        <p>
+          AI-generated models can arrive with dense geometry and awkward UV layouts. After retopology and a new UV unwrap, the original texture no longer matches the optimized mesh.
+        </p>
+        <div class="problem-flow">
+          <div class="flow-step"><b>AI model</b><span>Dense geometry</span></div>
+          <div class="flow-symbol">→</div>
+          <div class="flow-step"><b>Retopology</b><span>Clean mesh</span></div>
+          <div class="flow-symbol">→</div>
+          <div class="flow-step warning"><b>New UV</b><span>Original texture doesn't fit</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="solution section">
+      <div class="container">
+        <div class="section-kicker">THE SOLUTION</div>
+        <div class="two-col">
+          <div>
+            <h2>Transfer the look. Keep the optimized mesh.</h2>
+            <p>
+              ai2tex automates the texture-baking step between your original model and the retopologized target. Pick the Source, pick the Target, press Bake.
+            </p>
+            <div class="check-list">
+              <div><span>✓</span> Uses the Target's existing UV layout</div>
+              <div><span>✓</span> Bakes Diffuse / Base Color</div>
+              <div><span>✓</span> Creates a new texture for the optimized mesh</div>
+              <div><span>✓</span> Works with the standard 3ds Max baking workflow</div>
+            </div>
+          </div>
+          <div class="workflow-preview">
+            <div class="preview-head">
+              <span>ai2tex</span>
+              <span class="status">Ready</span>
+            </div>
+            <div class="preview-row"><span>Source</span><b>AI_Model</b></div>
+            <div class="preview-row"><span>Target</span><b>Retopo_Model</b></div>
+            <div class="preview-row"><span>UV Channel</span><b>1</b></div>
+            <div class="preview-row"><span>Map Size</span><b>2048 × 2048</b></div>
+            <div class="preview-row"><span>Format</span><b>PNG</b></div>
+            <div class="preview-button">BAKE</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="workflow section section-dark">
+      <div class="container">
+        <div class="section-kicker">WORKFLOW</div>
+        <h2>From AI model to optimized asset in four steps.</h2>
+        <p class="section-intro">A simple workflow designed to stay inside 3ds Max.</p>
+        <div class="steps">
+          <article class="step">
+            <span class="step-number">01</span>
+            <h3>Retopologize</h3>
+            <p>Create a clean, optimized mesh using your preferred retopology workflow.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">02</span>
+            <h3>Unwrap</h3>
+            <p>Create a new UV layout for the optimized target model.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">03</span>
+            <h3>Pick Source & Target</h3>
+            <p>Select the original textured model and the optimized target in ai2tex.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">04</span>
+            <h3>Bake</h3>
+            <p>Press Bake and get a new texture ready for the target's UV layout.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features section">
+      <div class="container">
+        <div class="section-kicker">WHAT IT DOES</div>
+        <h2>Focused on the part of the workflow that takes time.</h2>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="feature-icon">◈</span><h3>Diffuse / Base Color</h3><p>Transfer the visible color information from the source model to the optimized target.</p></article>
+          <article class="feature-card"><span class="feature-icon">⌁</span><h3>Automatic baking setup</h3><p>Projection, Render To Texture and temporary scene changes are handled for you.</p></article>
+          <article class="feature-card"><span class="feature-icon">◫</span><h3>Flexible output</h3><p>Choose map size and PNG, JPG or TGA output for the baked texture.</p></article>
+          <article class="feature-card"><span class="feature-icon">✓</span><h3>Safe workflow</h3><p>Temporary changes are restored after baking, and generated files are not overwritten.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="transfer section">
+      <div class="container two-col transfer-grid">
+        <div>
+          <div class="section-kicker">TRANSFER SCOPE</div>
+          <h2>What does ai2tex transfer?</h2>
+          <p>ai2tex currently focuses on the texture information that matters most for this workflow: Diffuse / Base Color.</p>
+          <div class="supported">
+            <div><span>✓</span> Physical Material Base Color + map</div>
+            <div><span>✓</span> Standard Material Diffuse + map</div>
+            <div><span>✓</span> Multi/Sub-Object materials</div>
+            <div><span>✓</span> Existing Target UV layout</div>
+          </div>
+        </div>
+        <div class="not-supported">
+          <span class="mini-label">NOT YET SUPPORTED</span>
+          <div class="tag-list">
+            <span>Normal</span><span>Roughness</span><span>Metallic</span><span>Opacity</span><span>Emission</span><span>AO</span>
+          </div>
+          <p>More map types may be added in future versions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="result section section-dark">
+      <div class="container">
+        <div class="section-kicker">THE RESULT</div>
+        <h2>From heavy AI mesh to a usable asset.</h2>
+        <p class="section-intro">Replace this visual with your real Before / After render when ready.</p>
+        <div class="before-after">
+          <div class="ba-panel before">
+            <div class="ba-label">BEFORE</div>
+            <div class="placeholder-object"><div class="placeholder-grid"></div></div>
+            <strong>AI-generated model</strong>
+            <span>Dense geometry · original UV</span>
+          </div>
+          <div class="ba-center">→</div>
+          <div class="ba-panel after">
+            <div class="ba-label">AFTER</div>
+            <div class="placeholder-object clean"><div class="placeholder-grid"></div></div>
+            <strong>Retopologized model</strong>
+            <span>New UV · baked Base Color</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="download section">
+      <div class="container download-box">
+        <div class="section-kicker">FREE DOWNLOAD</div>
+        <h2>Ready to try ai2tex?</h2>
+        <p>Download the latest version and transfer your first AI model texture in 3ds Max.</p>
+        <a class="button button-primary large" href="downloads/ai2tex.zip">Download ai2tex <span>↓</span></a>
+        <div class="download-note">No account required. No email required.</div>
+        <div class="requirements"><span>3ds Max 2025+</span><span>Windows</span><span>Free to use</span></div>
+      </div>
+    </section>
+
+    <section class="updates section">
+      <div class="container two-col updates-grid">
+        <div>
+          <div class="section-kicker">OPTIONAL</div>
+          <h2>Want to know about new tools?</h2>
+          <p>Leave your email if you'd like to hear when we release another useful tool or a major new product.</p>
+        </div>
+        <div class="email-card">
+          <!-- Replace this placeholder form with the Brevo form when your account is ready. -->
+          <form id="updates-form" novalidate>
+            <label for="email">Email address</label>
+            <div class="email-row">
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+              <button type="submit" class="button button-primary">Notify me</button>
+            </div>
+            <label class="consent">
+              <input type="checkbox" id="consent" name="consent">
+              <span>Notify me about new tools and products.</span>
+            </label>
+            <p class="form-note">No regular newsletters. We'll only contact you when we release something new. <a href="privacy.html">Privacy Policy</a></p>
+            <div id="form-message" class="form-message" role="status"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="support section">
+      <div class="container support-box">
+        <div>
+          <div class="section-kicker">SUPPORT FREE TOOLS</div>
+          <h2>Enjoyed the tool?</h2>
+          <p>If ai2tex saves you time, the best way to support its development is simply to follow us on Instagram.</p>
+        </div>
+        <a class="button button-ghost" href="https://www.instagram.com/" target="_blank" rel="noopener">Follow on Instagram ↗</a>
+      </div>
+    </section>
+
+    <section class="docs section">
+      <div class="container docs-box">
+        <div>
+          <div class="section-kicker">DOCUMENTATION</div>
+          <h2>Need help getting started?</h2>
+          <p>Installation, usage, parameters, troubleshooting and known limitations.</p>
+        </div>
+        <a class="button button-ghost" href="documentation.html">Installation & Documentation →</a>
+      </div>
+    </section>
+
+    <section id="faq" class="faq section">
+      <div class="container narrow">
+        <div class="section-kicker">FAQ</div>
+        <h2>Questions? We've got answers.</h2>
+        <div class="faq-list">
+          <details><summary>Which 3ds Max versions are supported?</summary><p>ai2tex is tested and supported on 3ds Max 2025 or newer.</p></details>
+          <details><summary>Is ai2tex really free?</summary><p>Yes. The tool is free to download and use. An email address is not required.</p></details>
+          <details><summary>Do I need to provide an email to download it?</summary><p>No. Email signup is completely optional.</p></details>
+          <details><summary>What does it transfer?</summary><p>Currently, ai2tex bakes Diffuse / Base Color. Normal, Roughness, Metallic, Opacity, Emission and AO are not currently transferred.</p></details>
+          <details><summary>Does it work with Corona?</summary><p>The script can be used in workflows with Corona and other renderers, but it temporarily switches to the Default Scanline Renderer during baking and restores the previous renderer afterward.</p></details>
+          <details><summary>Can I use it with non-AI models?</summary><p>Yes. The workflow is not limited to AI-generated assets. It can transfer texture information between compatible source and target meshes.</p></details>
+          <details><summary>Can I bake multiple models at once?</summary><p>Not currently. One Source and one Target are processed at a time.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#"><img src="assets/logo.svg" alt="" class="brand-mark"><span>ai<span class="brand-two">2</span>tex</span></a>
+        <p>Free tools for modern 3D workflows.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#how-it-works">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#download">Download</a>
+        <a href="#faq">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <div class="copyright">© 2026 ai2tex. Free 3ds Max tool.</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
