@@ -14,7 +14,28 @@
 <p class="lead">ai2tex bakes Diffuse / Base Color from an original model onto a retopologized target using the target's existing UV layout.</p>
 <div class="actions"><a class="btn primary" href="#download">Download free ↓</a><a class="btn secondary" href="documentation.html">Read documentation</a></div>
 <div class="meta"><span>Free to use</span><span>3ds Max 2025+</span><span>Windows</span></div>
-</div><div class="hero-visual"><div class="visual-title"><span>SOURCE → TARGET</span><span>TEXTURE TRANSFER</span></div><div class="models"><div><div class="model"></div><div class="model-label">AI / Source model</div><div class="model-note">Original geometry + texture</div></div><div class="arrow">→</div><div><div class="model target"></div><div class="model-label">Retopo / Target</div><div class="model-note">Existing UV + baked texture</div></div></div><div class="bake-pill">✦ BAKE WITH AI2TEX</div></div>
+</div><div class="hero-visual"><div class="visual-title"><span>SOURCE → TARGET</span><span>TEXTURE TRANSFER</span></div>
+<div class="models">
+
+  <div class="model-card">
+    <div class="model-image">
+      <img src="assets/ai2tex-before.jpg" alt="AI generated source model">
+    </div>
+    <div class="model-label">AI / Source model</div>
+    <div class="model-note">Original geometry + texture</div>
+  </div>
+
+  <div class="arrow">→</div>
+
+  <div class="model-card">
+    <div class="model-image">
+      <img src="assets/ai2tex-after.jpg" alt="Optimized textured model">
+    </div>
+    <div class="model-label">Optimized / Textured</div>
+    <div class="model-note">Retopology + texture transferred</div>
+  </div>
+
+</div>
 </div></section>
 
 <section class="section"><div class="container narrow"><div class="eyebrow">THE PROBLEM</div><h2>AI geometry can be useful — but its UVs often aren't.</h2><p class="body">AI-generated models from tools such as Hunyuan or Tripo can arrive with a mosaic-like UV layout and a difficult-to-work-with mesh. After retopology and a new UV unwrap, the original texture no longer fits the new model.</p><div class="flow"><div class="flow-card"><b>AI-generated model</b><span>Dense / irregular geometry</span></div><i class="flow-arrow">→</i><div class="flow-card"><b>Retopology</b><span>Clean, optimized geometry</span></div><i class="flow-arrow">→</i><div class="flow-card"><b>New UV</b><span>Texture needs to be baked again</span></div></div></div></section>
