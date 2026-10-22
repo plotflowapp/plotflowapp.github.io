@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Pre-Plot Check — Free AutoCAD Drawing Checker | Toritex</title>
+    <title>Pre-Plot Check — Free AutoCAD Drawing Checker</title>
     <meta name="description" content="Check AutoCAD drawings before plotting to PDF. Pre-Plot Check finds missing xrefs, images, PDF underlays and fonts, layout issues, title-block leftovers and duplicate sheet numbers. Free for AutoCAD 2024–2027.">
     <meta name="theme-color" content="#35516D">
 
     <link rel="canonical" href="https://toritex.com/tools/preplot-check/">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Toritex">
+    <meta property="og:site_name" content="Pre-Plot Check">
     <meta property="og:title" content="Pre-Plot Check — Free AutoCAD Drawing Checker">
     <meta property="og:description" content="Find common drawing issues before your AutoCAD PDFs go out. Free Pre-Plot Check by Toritex.">
     <meta property="og:url" content="https://toritex.com/tools/preplot-check/">
 
-    <link rel="icon" href="/assets/logo/favicon.svg">
+    <link rel="icon" href="https://i.ibb.co/9kFcWmXZ/2026-10-22-13-45-49-Resources.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
 
     <style>
-        /* Page-specific additions; the main Toritex design system is loaded from /style.css. */
+        /* Page-specific additions; shared site styles are loaded from /style.css. */
+        .ppc-brand { gap: 10px; font-weight: 700; }
+        .ppc-brand .logo-square { width: 38px; height: 38px; overflow: hidden; flex: 0 0 38px; }
+        .ppc-brand .logo-square img { width: 100%; height: 100%; object-fit: contain; }
         .ppc-hero .hero-grid { align-items: center; }
         .ppc-hero h1 { max-width: 680px; }
         .ppc-hero h1 span { display: block; }
@@ -103,14 +106,19 @@
         .ppc-level.info { color: #35516D; }
         .ppc-card-bottom {
             display: flex;
-            justify-content: space-between;
-            gap: 12px;
+            justify-content: flex-start;
+            gap: 8px;
+            flex-wrap: wrap;
             margin-top: 18px;
             padding-top: 16px;
             border-top: 1px solid var(--border);
             color: var(--text-light);
             font-size: 12px;
         }
+        .ppc-card-bottom span { padding: 5px 9px; border-radius: 7px; background: #F8FAFC; border: 1px solid var(--border); }
+        .ppc-card-bottom .legend-error { color: #B42318; }
+        .ppc-card-bottom .legend-warning { color: #9A6700; }
+        .ppc-card-bottom .legend-info { color: #35516D; }
         .ppc-section { padding: 120px 0; }
         .ppc-features-grid {
             display: grid;
@@ -202,6 +210,7 @@
         .ppc-smallprint { max-width: 760px; margin: 20px auto 0; font-size: 12px; color: var(--text-light); text-align: center; }
         .ppc-footer-links { margin-top: 12px; font-size: 13px; }
         .ppc-footer-links a { text-decoration: underline; }
+        .ppc-brand span { font-size: 22px; }
         @media (max-width: 900px) {
             .ppc-features-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .ppc-workflow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 36px; }
@@ -240,21 +249,20 @@
     </script>
 </head>
 
-<body>
+<body id="top">
 <header class="site-header">
     <div class="container">
-        <a class="logo" href="/" aria-label="Toritex home">
+        <a class="logo ppc-brand" href="#top" aria-label="Pre-Plot Check home">
             <div class="logo-square">
-                <img src="/assets/toritex-logo.png" alt="">
+                <img src="https://i.ibb.co/9kFcWmXZ/2026-10-22-13-45-49-Resources.png" alt="Pre-Plot Check icon">
             </div>
-            <span>Toritex</span>
+            <span>Pre-Plot Check</span>
         </a>
 
-        <nav class="navigation" aria-label="Main navigation">
-            <a href="/#features">Features</a>
-            <a href="/pricing.html">Pricing</a>
-            <a href="/#faq">FAQ</a>
-            <a href="/documentation.html">Documentation</a>
+        <nav class="navigation" aria-label="Pre-Plot Check navigation">
+            <a href="#checks">What It Checks</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#faq">FAQ</a>
         </nav>
 
         <div class="header-actions">
@@ -276,7 +284,7 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="download/PrePlotCheck-Setup.exe" class="button primary large" download>
+                    <a href="/tools/preplot-check/download/PrePlotCheck-Setup.exe" class="button primary large" download>
                         Download Free <span aria-hidden="true">↓</span>
                     </a>
                     <a href="#checks" class="button outline large">See What It Checks</a>
@@ -327,9 +335,10 @@
                             <span class="ppc-level info">Info</span>
                         </div>
                     </div>
-                    <div class="ppc-card-bottom">
-                        <span>Illustrative preview</span>
-                        <span>Errors · Warnings · Info</span>
+                    <div class="ppc-card-bottom" aria-label="Finding severity legend">
+                        <span class="legend-error">Error</span>
+                        <span class="legend-warning">Warning</span>
+                        <span class="legend-info">Info</span>
                     </div>
                 </div>
             </div>
@@ -385,7 +394,7 @@
         </div>
     </section>
 
-    <section class="workflow" style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <section id="how-it-works" class="workflow" style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">How It Works</span>
@@ -473,7 +482,7 @@
                 <h2>Give your drawings one last check before plotting.</h2>
                 <p>Install Pre-Plot Check and review common drawing issues before sending your PDF set out.</p>
                 <div class="download-buttons">
-                    <a href="download/PrePlotCheck-Setup.exe" class="button primary large" download>
+                    <a href="/tools/preplot-check/download/PrePlotCheck-Setup.exe" class="button primary large" download>
                         Download Pre-Plot Check <span aria-hidden="true">↓</span>
                     </a>
                     <a href="#checks" class="button outline large">Review Features</a>
@@ -488,35 +497,28 @@
 <footer class="footer">
     <div class="container footer-grid">
         <div>
-            <h3>Toritex</h3>
-            <p>Small, useful tools for CAD professionals.</p>
-            <div class="ppc-footer-links"><a href="/">Visit Toritex</a></div>
+            <h3>Pre-Plot Check</h3>
+            <p>A free AutoCAD utility by Toritex.</p>
         </div>
         <div>
-            <h4>Product</h4>
+            <h4>Pre-Plot Check</h4>
             <ul>
                 <li><a href="#checks">What it checks</a></li>
+                <li><a href="#how-it-works">How it works</a></li>
                 <li><a href="#download">Download</a></li>
                 <li><a href="#faq">FAQ</a></li>
             </ul>
         </div>
         <div>
-            <h4>Resources</h4>
-            <ul>
-                <li><a href="/documentation.html">Toritex Documentation</a></li>
-                <li><a href="/pricing.html">Toritex Pricing</a></li>
-            </ul>
-        </div>
-        <div>
             <h4>Support</h4>
             <ul>
-                <li><a href="mailto:tools@toritex.com">Contact</a></li>
-                <li><a href="https://github.com/plotflowapp/plotflowapp.github.io/tree/main/tools/preplot-check" target="_blank" rel="noopener noreferrer">Source files</a></li>
+                <li><a href="mailto:tools@toritex.com?subject=Pre-Plot%20Check%20Support">Contact about Pre-Plot Check</a></li>
+                <li><a href="https://github.com/plotflowapp/plotflowapp.github.io/tree/main/tools/preplot-check" target="_blank" rel="noopener noreferrer">Project files</a></li>
             </ul>
         </div>
     </div>
     <div class="container footer-bottom">
-        <p>© 2026 Toritex. All rights reserved.</p>
+        <p>© 2026 Toritex · Pre-Plot Check</p>
     </div>
 </footer>
 </body>
