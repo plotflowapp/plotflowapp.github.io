@@ -1400,3 +1400,16 @@ h2{
 .smart-screen-note p:last-child {
     margin-bottom: 0;
 }
+
+.smart-screen-note {
+    color: #475569 !important;
+    background: #F8FAFC;
+}
+
+.smart-screen-note strong {
+    color: #35516D !important;
+}
+
+.smart-screen-note p {
+    color: #475569 !important;
+}
