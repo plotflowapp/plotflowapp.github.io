@@ -26,6 +26,8 @@
         .ppc-brand { gap: 10px; font-weight: 700; }
         .ppc-brand .logo-square { width: 38px; height: 38px; overflow: hidden; flex: 0 0 38px; }
         .ppc-brand .logo-square img { width: 100%; height: 100%; object-fit: contain; }
+        .ppc-preview-frame { margin: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 22px; background: #fff; box-shadow: var(--shadow-medium); }
+        .ppc-preview-image { display: block; width: 100%; height: auto; }
         .ppc-hero .hero-grid { align-items: center; }
         .ppc-hero h1 { max-width: 680px; }
         .ppc-hero h1 span { display: block; }
@@ -304,43 +306,16 @@
             </div>
 
             <div class="hero-right">
-                <div class="ppc-check-card" aria-label="Illustration of a Pre-Plot Check results panel">
-                    <div class="ppc-card-top">
-                        <div>
-                            <div class="ppc-card-title">Pre-Plot Check</div>
-                            <div class="ppc-card-subtitle">Drawing review · Results</div>
-                        </div>
-                        <div class="ppc-status"><span class="ppc-status-dot"></span> Review needed</div>
-                    </div>
-
-                    <div class="ppc-findings">
-                        <div class="ppc-finding">
-                            <div class="ppc-finding-icon">↗</div>
-                            <div><strong>Missing external reference</strong><small>Layout: A-101 · Reference not found</small></div>
-                            <span class="ppc-level error">Error</span>
-                        </div>
-                        <div class="ppc-finding">
-                            <div class="ppc-finding-icon">T</div>
-                            <div><strong>Title block placeholder</strong><small>Layout: A-102 · “TBD” found</small></div>
-                            <span class="ppc-level warning">Warning</span>
-                        </div>
-                        <div class="ppc-finding">
-                            <div class="ppc-finding-icon">#</div>
-                            <div><strong>Duplicate sheet number</strong><small>Layout: A-103 · Number repeated</small></div>
-                            <span class="ppc-level warning">Warning</span>
-                        </div>
-                        <div class="ppc-finding">
-                            <div class="ppc-finding-icon">✓</div>
-                            <div><strong>Layout viewport check</strong><small>Layout: A-104 · Informational result</small></div>
-                            <span class="ppc-level info">Info</span>
-                        </div>
-                    </div>
-                    <div class="ppc-card-bottom" aria-label="Finding severity legend">
-                        <span class="legend-error">Error</span>
-                        <span class="legend-warning">Warning</span>
-                        <span class="legend-info">Info</span>
-                    </div>
-                </div>
+                <figure class="ppc-preview-frame">
+                    <img
+                        class="ppc-preview-image"
+                        src="/tools/preplot-check/preplot-check-preview.png"
+                        alt="Pre-Plot Check results window inside AutoCAD"
+                        width="890"
+                        height="745"
+                        fetchpriority="high"
+                    >
+                </figure>
             </div>
         </div>
     </section>
