@@ -1372,3 +1372,31 @@ h2{
     margin:0;
 
 }
+
+/* Windows SmartScreen notice */
+.smart-screen-note {
+    margin-top: 20px;
+    padding: 14px 16px;
+    background: #F8FAFC;
+    border: 1px solid #E5EAF2;
+    border-radius: 12px;
+    color: #64748B;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.smart-screen-note strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #35516D;
+    font-size: 14px;
+}
+
+.smart-screen-note p {
+    margin: 0 0 8px;
+}
+
+.smart-screen-note p:last-child {
+    margin-bottom: 0;
+}
