@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pre-Plot Check — Free AutoCAD Drawing Checker</title>
+    <meta name="description" content="Check AutoCAD drawings before plotting to PDF. Pre-Plot Check finds missing xrefs, images, PDF underlays and fonts, layout issues, title-block leftovers and duplicate sheet numbers. Free for AutoCAD 2024–2027.">
+    <meta name="theme-color" content="#35516D">
+
+    <link rel="canonical" href="https://toritex.com/tools/preplot-check/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Pre-Plot Check">
+    <meta property="og:title" content="Pre-Plot Check — Free AutoCAD Drawing Checker">
+    <meta property="og:description" content="Find common drawing issues before your AutoCAD PDFs go out. Free Pre-Plot Check by Toritex.">
+    <meta property="og:url" content="https://toritex.com/tools/preplot-check/">
+
+    <link rel="icon" href="https://i.ibb.co/9kFcWmXZ/2026-10-22-13-45-49-Resources.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        /* Page-specific additions; shared site styles are loaded from /style.css. */
+        .ppc-brand { gap: 10px; font-weight: 700; }
+        .ppc-brand .logo-square { width: 38px; height: 38px; overflow: hidden; flex: 0 0 38px; }
+        .ppc-brand .logo-square img { width: 100%; height: 100%; object-fit: contain; }
+        .ppc-hero .hero-grid { align-items: center; }
+        .ppc-hero h1 { max-width: 680px; }
+        .ppc-hero h1 span { display: block; }
+        .ppc-hero .hero-left > p { max-width: 640px; }
+        .ppc-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-top: 26px;
+            padding: 16px 18px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        .ppc-note strong { color: var(--text); }
+        .ppc-check-card {
+            position: relative;
+            padding: 28px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            box-shadow: var(--shadow-medium);
+        }
+        .ppc-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding-bottom: 20px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid var(--border);
+        }
+        .ppc-card-title { font-size: 17px; font-weight: 700; }
+        .ppc-card-subtitle { margin-top: 3px; font-size: 12px; color: var(--text-light); }
+        .ppc-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 7px 10px;
+            border-radius: 999px;
+            background: #FFF4E5;
+            color: #9A5B00;
+            font-size: 11px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .ppc-status-dot { width: 7px; height: 7px; border-radius: 50%; background: #E5A23B; }
+        .ppc-findings { display: grid; gap: 10px; }
+        .ppc-finding {
+            display: grid;
+            grid-template-columns: 34px minmax(0, 1fr) auto;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            min-width: 0;
+        }
+        .ppc-finding-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: #EEF3F8;
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 14px;
+        }
+        .ppc-finding strong { display: block; font-size: 13px; line-height: 1.35; }
+        .ppc-finding small { display: block; margin-top: 3px; color: var(--text-light); font-size: 11px; line-height: 1.4; }
+        .ppc-level { font-size: 10px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+        .ppc-level.error { color: #B42318; }
+        .ppc-level.warning { color: #9A6700; }
+        .ppc-level.info { color: #35516D; }
+        .ppc-card-bottom {
+            display: flex;
+            justify-content: flex-start;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 18px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            color: var(--text-light);
+            font-size: 12px;
+        }
+        .ppc-card-bottom span { padding: 5px 9px; border-radius: 7px; background: #F8FAFC; border: 1px solid var(--border); }
+        .ppc-card-bottom .legend-error { color: #B42318; }
+        .ppc-card-bottom .legend-warning { color: #9A6700; }
+        .ppc-card-bottom .legend-info { color: #35516D; }
+        .ppc-section { padding: 120px 0; }
+        .ppc-features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+        .ppc-feature-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow-small);
+        }
+        .ppc-feature-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 20px;
+            border-radius: 14px;
+            background: #EEF3F8;
+            color: var(--primary);
+            font-size: 22px;
+            font-weight: 700;
+        }
+        .ppc-feature-card h3 { margin-bottom: 12px; }
+        .ppc-feature-card p { font-size: 15px; }
+        .ppc-workflow-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 22px;
+        }
+        .ppc-workflow-step { position: relative; }
+        .ppc-step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            margin-bottom: 18px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            font-size: 17px;
+            font-weight: 800;
+        }
+        .ppc-workflow-step h3 { margin-bottom: 10px; font-size: 18px; }
+        .ppc-workflow-step p { font-size: 14px; }
+        .ppc-privacy {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 22px;
+            align-items: start;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 34px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            box-shadow: var(--shadow-small);
+        }
+        .ppc-privacy-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            background: #EAF7EF;
+            color: #258653;
+            font-size: 24px;
+        }
+        .ppc-privacy h2 { font-size: 27px; margin-bottom: 10px; }
+        .ppc-privacy p { font-size: 16px; }
+        .ppc-faq { padding: 110px 0; background: #fff; }
+        .ppc-faq-list { max-width: 900px; margin: 54px auto 0; }
+        .ppc-faq-item { padding: 24px 0; border-bottom: 1px solid var(--border); }
+        .ppc-faq-item h3 { margin-bottom: 9px; font-size: 18px; }
+        .ppc-faq-item p { font-size: 15px; }
+        .ppc-download-meta { margin-top: 18px; color: rgba(255,255,255,.78); font-size: 13px; }
+        .ppc-download .section-tag { background: rgba(255,255,255,.14); color: #fff; }
+        .ppc-download h2 { color: #fff; margin: 22px 0 18px; }
+        .ppc-download p { max-width: 720px; margin: 0 auto 32px; color: rgba(255,255,255,.88); }
+        .ppc-download .button.primary { background: #fff; color: var(--primary); }
+        .ppc-download .button.primary:hover { background: #F4F7FA; }
+        .ppc-download .button.outline { color: #fff; border: 1px solid rgba(255,255,255,.4); background: transparent; }
+        .ppc-download .button.outline:hover { background: rgba(255,255,255,.08); }
+        .ppc-smallprint { max-width: 760px; margin: 20px auto 0; font-size: 12px; color: var(--text-light); text-align: center; }
+        .ppc-footer-links { margin-top: 12px; font-size: 13px; }
+        .ppc-footer-links a { text-decoration: underline; }
+        .ppc-brand span { font-size: 22px; }
+        @media (max-width: 900px) {
+            .ppc-features-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .ppc-workflow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 36px; }
+        }
+        @media (max-width: 768px) {
+            .ppc-hero .hero-grid { gap: 35px; }
+            .ppc-hero h1 { font-size: 46px; }
+            .ppc-check-card { padding: 18px; }
+            .ppc-finding { grid-template-columns: 32px minmax(0, 1fr); }
+            .ppc-level { grid-column: 2; }
+            .ppc-features-grid, .ppc-workflow-grid { grid-template-columns: 1fr; }
+            .ppc-privacy { grid-template-columns: 1fr; padding: 25px; }
+            .ppc-privacy h2 { font-size: 25px; }
+            .ppc-download .download-card { padding: 55px 24px; }
+            .ppc-card-top { align-items: flex-start; flex-direction: column; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Pre-Plot Check",
+      "url": "https://toritex.com/tools/preplot-check/",
+      "description": "A free AutoCAD plugin that checks drawings for missing references, missing images and PDF underlays, missing fonts, layouts without viewports, title-block placeholders and duplicate sheet numbers before plotting to PDF.",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Windows",
+      "softwareRequirements": "Full AutoCAD 2024, 2025, 2026 or 2027, 64-bit Windows",
+      "downloadUrl": "https://toritex.com/tools/preplot-check/download/PrePlotCheck-Setup.exe",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+</head>
+
+<body id="top">
+<header class="site-header">
+    <div class="container">
+        <a class="logo ppc-brand" href="#top" aria-label="Pre-Plot Check home">
+            <div class="logo-square">
+                <img src="https://i.ibb.co/9kFcWmXZ/2026-10-22-13-45-49-Resources.png" alt="Pre-Plot Check icon">
+            </div>
+            <span>Pre-Plot Check</span>
+        </a>
+
+        <nav class="navigation" aria-label="Pre-Plot Check navigation">
+            <a href="#checks">What It Checks</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="header-actions">
+            <a class="button primary large" href="#download">Download Free</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero ppc-hero">
+        <div class="container hero-grid">
+            <div class="hero-left">
+                <div class="badge">Free AutoCAD Utility</div>
+                <h1>Check your drawing <span>before you plot.</span></h1>
+                <p>
+                    Pre-Plot Check scans your AutoCAD drawing for common issues that can
+                    spoil a PDF set — from missing xrefs and fonts to unfinished title-block
+                    fields — so you can fix them before sending drawings out.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="/tools/preplot-check/download/PrePlotCheck-Setup.exe" class="button primary large" download>
+                        Download Free <span aria-hidden="true">↓</span>
+                    </a>
+                    <a href="#checks" class="button outline large">See What It Checks</a>
+                </div>
+
+                <div class="hero-benefits">
+                    <div>✓ Free to use</div>
+                    <div>✓ AutoCAD 2024–2027</div>
+                    <div>✓ 64-bit Windows</div>
+                    <div>✓ Read-only checks</div>
+                </div>
+
+                <div class="ppc-note">
+                    <span aria-hidden="true">ⓘ</span>
+                    <div><strong>No drawing changes.</strong> Pre-Plot Check reads your drawing and does not collect or send your data anywhere.</div>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="ppc-check-card" aria-label="Illustration of a Pre-Plot Check results panel">
+                    <div class="ppc-card-top">
+                        <div>
+                            <div class="ppc-card-title">Pre-Plot Check</div>
+                            <div class="ppc-card-subtitle">Drawing review · Results</div>
+                        </div>
+                        <div class="ppc-status"><span class="ppc-status-dot"></span> Review needed</div>
+                    </div>
+
+                    <div class="ppc-findings">
+                        <div class="ppc-finding">
+                            <div class="ppc-finding-icon">↗</div>
+                            <div><strong>Missing external reference</strong><small>Layout: A-101 · Reference not found</small></div>
+                            <span class="ppc-level error">Error</span>
+                        </div>
+                        <div class="ppc-finding">
+                            <div class="ppc-finding-icon">T</div>
+                            <div><strong>Title block placeholder</strong><small>Layout: A-102 · “TBD” found</small></div>
+                            <span class="ppc-level warning">Warning</span>
+                        </div>
+                        <div class="ppc-finding">
+                            <div class="ppc-finding-icon">#</div>
+                            <div><strong>Duplicate sheet number</strong><small>Layout: A-103 · Number repeated</small></div>
+                            <span class="ppc-level warning">Warning</span>
+                        </div>
+                        <div class="ppc-finding">
+                            <div class="ppc-finding-icon">✓</div>
+                            <div><strong>Layout viewport check</strong><small>Layout: A-104 · Informational result</small></div>
+                            <span class="ppc-level info">Info</span>
+                        </div>
+                    </div>
+                    <div class="ppc-card-bottom" aria-label="Finding severity legend">
+                        <span class="legend-error">Error</span>
+                        <span class="legend-warning">Warning</span>
+                        <span class="legend-info">Info</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="compatibility">
+        <div class="container">
+            <p>Built for <strong>full AutoCAD 2024–2027</strong> on 64-bit Windows</p>
+        </div>
+    </section>
+
+    <section id="checks" class="features ppc-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What It Checks</span>
+                <h2>Catch common plotting problems before they reach the PDF.</h2>
+                <p>Pre-Plot Check groups findings by severity and shows which layout each issue belongs to.</p>
+            </div>
+
+            <div class="ppc-features-grid">
+                <article class="ppc-feature-card">
+                    <div class="ppc-feature-icon">↗</div>
+                    <h3>External references</h3>
+                    <p>Find xrefs that are missing, unloaded or using absolute paths that may break when a drawing moves to another computer.</p>
+                </article>
+                <article class="ppc-feature-card">
+                    <div class="ppc-feature-icon">▧</div>
+                    <h3>Images and PDF underlays</h3>
+                    <p>Spot referenced images and PDF underlays that AutoCAD can no longer locate.</p>
+                </article>
+                <article class="ppc-feature-card">
+                    <div class="ppc-feature-icon">T</div>
+                    <h3>Missing fonts</h3>
+                    <p>Find text styles pointing to fonts that are not installed and may be substituted in the PDF.</p>
+                </article>
+                <article class="ppc-feature-card">
+                    <div class="ppc-feature-icon">□</div>
+                    <h3>Layouts without viewports</h3>
+                    <p>Identify layouts that have a sheet frame but no viewport showing the drawing.</p>
+                </article>
+                <article class="ppc-feature-card">
+                    <div class="ppc-feature-icon">Aa</div>
+                    <h3>Title-block leftovers</h3>
+                    <p>Flag common placeholders such as TBD, TBC, TODO, XXX and ???, plus empty sheet numbers or sheet titles in supported block attributes.</p>
+                </article>
+                <article class="ppc-feature-card">
+                    <div class="ppc-feature-icon">#</div>
+                    <h3>Duplicate sheet numbers</h3>
+                    <p>Find sheets that use the same sheet number, helping catch a common issue before publishing.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="workflow" style="background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">How It Works</span>
+                <h2>From drawing to a clearer checklist in a few clicks.</h2>
+                <p>Run the check, review the findings, fix what matters and check again.</p>
+            </div>
+            <div class="ppc-workflow-grid">
+                <div class="ppc-workflow-step">
+                    <div class="ppc-step-number">1</div>
+                    <h3>Open a drawing</h3>
+                    <p>Open the DWG you want to review in AutoCAD.</p>
+                </div>
+                <div class="ppc-workflow-step">
+                    <div class="ppc-step-number">2</div>
+                    <h3>Run the check</h3>
+                    <p>Use the Pre-Plot Check button on the Toritex ribbon tab or type <code>PREPLOTCHECK</code>.</p>
+                </div>
+                <div class="ppc-workflow-step">
+                    <div class="ppc-step-number">3</div>
+                    <h3>Review findings</h3>
+                    <p>Read errors, warnings and information grouped by layout.</p>
+                </div>
+                <div class="ppc-workflow-step">
+                    <div class="ppc-step-number">4</div>
+                    <h3>Jump to a layout</h3>
+                    <p>Double-click a finding to jump straight to the related layout.</p>
+                </div>
+                <div class="ppc-workflow-step">
+                    <div class="ppc-step-number">5</div>
+                    <h3>Re-run or export</h3>
+                    <p>Check again after fixes or export the findings to CSV to share the list.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features ppc-section">
+        <div class="container">
+            <div class="ppc-privacy">
+                <div class="ppc-privacy-icon" aria-hidden="true">✓</div>
+                <div>
+                    <span class="section-tag">Your Drawing Stays Yours</span>
+                    <h2>Read-only by design.</h2>
+                    <p>Pre-Plot Check only reads the drawing. It does not modify your DWG and does not collect or send drawing data anywhere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq ppc-faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Compatibility &amp; FAQ</span>
+                <h2>Good to know before installing.</h2>
+            </div>
+            <div class="ppc-faq-list">
+                <div class="ppc-faq-item">
+                    <h3>Which AutoCAD versions are supported?</h3>
+                    <p>Pre-Plot Check is built for full AutoCAD 2024, 2025, 2026 and 2027 on 64-bit Windows. AutoCAD LT does not support this type of plugin. AutoCAD-based products such as Architecture and Civil 3D have not yet been tested.</p>
+                </div>
+                <div class="ppc-faq-item">
+                    <h3>Does it change my drawing?</h3>
+                    <p>No. It reads the drawing and reports findings. It does not modify the DWG or send your drawing data anywhere.</p>
+                </div>
+                <div class="ppc-faq-item">
+                    <h3>Can it find every title-block sheet number?</h3>
+                    <p>Title-block checks look for block attributes with common names such as SHEET_NUMBER, SHEETNO or DWG_NO. If your sheet number is plain text rather than an attribute, that specific check cannot detect it.</p>
+                </div>
+                <div class="ppc-faq-item">
+                    <h3>How do I install it?</h3>
+                    <p>Close AutoCAD, run the installer (administrator rights are not required), then start AutoCAD. When prompted to load Pre-Plot Check, choose “Always Load”. The prompt appears because the plugin is not digitally signed.</p>
+                </div>
+                <div class="ppc-faq-item">
+                    <h3>How do I uninstall it?</h3>
+                    <p>Open Windows Settings → Apps and uninstall “Pre-Plot Check for AutoCAD”.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="download ppc-download">
+        <div class="container">
+            <div class="download-card">
+                <span class="section-tag">Free Download</span>
+                <h2>Give your drawings one last check before plotting.</h2>
+                <p>Install Pre-Plot Check and review common drawing issues before sending your PDF set out.</p>
+                <div class="download-buttons">
+                    <a href="/tools/preplot-check/download/PrePlotCheck-Setup.exe" class="button primary large" download>
+                        Download Pre-Plot Check <span aria-hidden="true">↓</span>
+                    </a>
+                    <a href="#checks" class="button outline large">Review Features</a>
+                </div>
+                <div class="ppc-download-meta">Free · AutoCAD 2024–2027 · 64-bit Windows</div>
+            </div>
+            <p class="ppc-smallprint">This is an early version. If it misses an issue you expected it to catch, or flags something it should not, feedback is welcome.</p>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer-grid">
+        <div>
+            <h3>Pre-Plot Check</h3>
+            <p>A free AutoCAD utility by Toritex.</p>
+        </div>
+        <div>
+            <h4>Pre-Plot Check</h4>
+            <ul>
+                <li><a href="#checks">What it checks</a></li>
+                <li><a href="#how-it-works">How it works</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Support</h4>
+            <ul>
+                <li><a href="mailto:tools@toritex.com?subject=Pre-Plot%20Check%20Support">Contact about Pre-Plot Check</a></li>
+                <li><a href="https://github.com/plotflowapp/plotflowapp.github.io/tree/main/tools/preplot-check" target="_blank" rel="noopener noreferrer">Project files</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+        <p>© 2026 Toritex · Pre-Plot Check</p>
+    </div>
+</footer>
+</body>
+</html>
