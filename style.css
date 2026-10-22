@@ -1373,12 +1373,11 @@ h2{
 
 }
 
-
 /* Pre-Plot Check — SmartScreen notice */
-.smart-screen-note {
+.download-card .smart-screen-note {
     margin-top: 20px;
     padding: 14px 18px;
-    background: #F8FAFC;
+    background: #F8FAFC !important;
     border: 1px solid #E5EAF2;
     border-radius: 12px;
     color: #475569 !important;
@@ -1387,20 +1386,24 @@ h2{
     text-align: center !important;
 }
 
-.smart-screen-note strong {
+.download-card .smart-screen-note *,
+.download-card .smart-screen-note p {
+    color: #475569 !important;
+    text-align: center !important;
+    opacity: 1 !important;
+}
+
+.download-card .smart-screen-note strong {
     display: block;
     margin-bottom: 6px;
     color: #35516D !important;
     font-size: 14px;
-    text-align: center !important;
 }
 
-.smart-screen-note p {
+.download-card .smart-screen-note p {
     margin: 0 0 8px;
-    color: #475569 !important;
-    text-align: center !important;
 }
 
-.smart-screen-note p:last-child {
+.download-card .smart-screen-note p:last-child {
     margin-bottom: 0;
 }
