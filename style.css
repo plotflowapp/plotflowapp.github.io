@@ -1373,7 +1373,6 @@ h2{
 
 }
 
-/* Windows SmartScreen notice */
 
 /* Pre-Plot Check — SmartScreen notice */
 .smart-screen-note {
@@ -1382,22 +1381,24 @@ h2{
     background: #F8FAFC;
     border: 1px solid #E5EAF2;
     border-radius: 12px;
-    color: #475569;
+    color: #475569 !important;
     font-size: 13px;
     line-height: 1.6;
-    text-align: center;
+    text-align: center !important;
 }
 
 .smart-screen-note strong {
     display: block;
     margin-bottom: 6px;
-    color: #35516D;
+    color: #35516D !important;
     font-size: 14px;
+    text-align: center !important;
 }
 
 .smart-screen-note p {
     margin: 0 0 8px;
-    color: #475569;
+    color: #475569 !important;
+    text-align: center !important;
 }
 
 .smart-screen-note p:last-child {
