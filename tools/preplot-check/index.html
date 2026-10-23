@@ -37,6 +37,13 @@
         .ppc-brand .logo-square img { width: 100%; height: 100%; object-fit: contain; }
         .ppc-preview-frame { margin: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 22px; background: #fff; box-shadow: var(--shadow-medium); }
         .ppc-preview-image { display: block; width: 100%; height: auto; }
+        .ppc-ribbon-section { padding: 90px 0; background: #F8FAFC; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .ppc-ribbon-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: 48px; align-items: center; }
+        .ppc-ribbon-copy h2 { margin: 16px 0 14px; }
+        .ppc-ribbon-copy p { max-width: 600px; }
+        .ppc-ribbon-note { margin-top: 18px; font-size: 14px; color: var(--text-light); }
+        .ppc-ribbon-frame { margin: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 18px; background: #fff; box-shadow: var(--shadow-medium); }
+        .ppc-ribbon-image { display: block; width: 100%; height: auto; }
         .ppc-hero .hero-grid { align-items: center; }
         .ppc-hero h1 { max-width: 680px; }
         .ppc-hero h1 span { display: block; }
@@ -227,6 +234,7 @@
             .ppc-workflow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 36px; }
         }
         @media (max-width: 768px) {
+            .ppc-ribbon-grid { grid-template-columns: 1fr; gap: 30px; }
             .ppc-hero .hero-grid { gap: 35px; }
             .ppc-hero h1 { font-size: 46px; }
             .ppc-check-card { padding: 18px; }
@@ -335,6 +343,32 @@
         </div>
     </section>
 
+    <section class="ppc-ribbon-section">
+        <div class="container ppc-ribbon-grid">
+            <div class="ppc-ribbon-copy">
+                <span class="section-tag">Where to Find It</span>
+                <h2>Run Pre-Plot Check from the Toritex ribbon tab.</h2>
+                <p>
+                    In the standard AutoCAD ribbon interface, Pre-Plot Check appears in the
+                    <strong>Toritex</strong> tab. Just click the <strong>Pre-Plot Check</strong>
+                    button to run the check.
+                </p>
+                <p class="ppc-ribbon-note">
+                    If you use a classic menu-and-toolbar workspace without the ribbon, type
+                    <code>PREPLOTCHECK</code> on the AutoCAD command line.
+                </p>
+            </div>
+            <figure class="ppc-ribbon-frame">
+                <img
+                    class="ppc-ribbon-image"
+                    src="/tools/preplot-check/menue.png"
+                    alt="Pre-Plot Check button on the Toritex ribbon tab in AutoCAD"
+                    loading="lazy"
+                >
+            </figure>
+        </div>
+    </section>
+
     <section id="checks" class="features ppc-section">
         <div class="container">
             <div class="section-header">
@@ -394,7 +428,7 @@
                 <div class="ppc-workflow-step">
                     <div class="ppc-step-number">2</div>
                     <h3>Run the check</h3>
-                    <p>Use the Pre-Plot Check button on the Toritex ribbon tab or type <code>PREPLOTCHECK</code>.</p>
+                    <p>Click <strong>Pre-Plot Check</strong> on the <strong>Toritex</strong> ribbon tab, or type <code>PREPLOTCHECK</code>.</p>
                 </div>
                 <div class="ppc-workflow-step">
                     <div class="ppc-step-number">3</div>
