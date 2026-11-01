@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Pre-Plot Check - Free AutoCAD Drawing Checker</title>
-    <meta name="description" content="Check AutoCAD drawings before plotting to PDF. Pre-Plot Check finds missing xrefs, images, PDF underlays and fonts, layout issues, title-block leftovers and duplicate sheet numbers. Free for AutoCAD 2024–2027.">
+    <meta name="description" content="Check AutoCAD drawings before plotting to PDF. Pre-Plot Check finds missing xrefs, images and fonts, objects on non-plotting layers, hand-typed dimension text, title-block leftovers and duplicate sheet numbers. Free for AutoCAD 2024-2027.">
     <meta name="theme-color" content="#35516D">
 
     <link rel="canonical" href="https://toritex.com/tools/preplot-check/">
@@ -254,9 +254,10 @@
       "@type": "SoftwareApplication",
       "name": "Pre-Plot Check",
       "url": "https://toritex.com/tools/preplot-check/",
-      "description": "A free AutoCAD plugin that checks drawings for missing references, missing images and PDF underlays, missing fonts, layouts without viewports, title-block placeholders and duplicate sheet numbers before plotting to PDF.",
+      "description": "A free AutoCAD plugin that checks drawings before plotting to PDF: missing references, images, PDF underlays and fonts, objects on non-plotting layers, hand-typed dimension text, layouts without viewports, title-block placeholders and duplicate sheet numbers.",
       "applicationCategory": "DesignApplication",
       "operatingSystem": "Windows",
+      "softwareVersion": "0.3.0",
       "softwareRequirements": "Full AutoCAD 2024, 2025, 2026 or 2027, 64-bit Windows",
       "downloadUrl": "https://toritex.com/tools/preplot-check/download/PrePlotCheck-Setup.zip",
       "offers": {
@@ -298,8 +299,9 @@
                 <h1>Check your drawing <span>before you plot</span></h1>
                 <p>
                     Pre-Plot Check scans your AutoCAD drawing for common issues that can
-                    spoil a PDF set - from missing xrefs and fonts to unfinished title-block
-                    fields - so you can fix them before sending drawings out.
+                    spoil a PDF set - from missing xrefs and fonts to objects on non-plotting
+                    layers and unfinished title-block fields - so you can fix them before
+                    sending drawings out.
                 </p>
 
                 <div class="hero-buttons">
@@ -311,7 +313,7 @@
 
                 <div class="hero-benefits">
                     <div>✓ Free to use</div>
-                    <div>✓ AutoCAD 2024–2027</div>
+                    <div>✓ AutoCAD 2024-2027</div>
                     <div>✓ 64-bit Windows</div>
                     <div>✓ Read-only checks</div>
                 </div>
@@ -339,7 +341,7 @@
 
     <section class="compatibility">
         <div class="container">
-            <p>Built for <strong>full AutoCAD 2024–2027</strong> on 64-bit Windows</p>
+            <p>Built for <strong>full AutoCAD 2024-2027</strong> on 64-bit Windows</p>
         </div>
     </section>
 
@@ -350,8 +352,8 @@
                 <h2>Run Pre-Plot Check from the Toritex ribbon tab</h2>
                 <p>
                     In the standard AutoCAD ribbon interface, Pre-Plot Check appears in the
-                    <strong>Toritex</strong> tab. Just click the <strong>Pre-Plot Check</strong>
-                    button to run the check.
+                    <strong>Drawing Checks</strong> panel of the <strong>Toritex</strong> tab.
+                    Just click the <strong>Pre-Plot Check</strong> button to run the check.
                 </p>
                 <p class="ppc-ribbon-note">
                     If you use a classic menu-and-toolbar workspace without the ribbon, type
@@ -374,7 +376,7 @@
             <div class="section-header">
                 <span class="section-tag">What It Checks</span>
                 <h2>Catch common plotting problems before they reach the PDF</h2>
-                <p>Pre-Plot Check groups findings by severity and shows which layout each issue belongs to</p>
+                <p>Pre-Plot Check groups findings by severity and shows where each one lives: a layout, model space or the whole drawing</p>
             </div>
 
             <div class="ppc-features-grid">
@@ -394,6 +396,16 @@
                     <p>Find text styles pointing to fonts that are not installed and may be substituted in the PDF.</p>
                 </article>
                 <article class="ppc-feature-card">
+                    <div class="ppc-feature-icon">≡</div>
+                    <h3>Objects on non-plotting layers</h3>
+                    <p>Find text and geometry on layers that are set not to plot. They are visible on screen but missing in the PDF. Viewport frames and Defpoints points are ignored on purpose.</p>
+                </article>
+                <article class="ppc-feature-card">
+                    <div class="ppc-feature-icon">↔</div>
+                    <h3>Hand-typed dimension text</h3>
+                    <p>Spot dimensions where a number was typed over the measured value, so it will not update when the geometry changes.</p>
+                </article>
+                <article class="ppc-feature-card">
                     <div class="ppc-feature-icon">□</div>
                     <h3>Layouts without viewports</h3>
                     <p>Identify layouts that have a sheet frame but no viewport showing the drawing.</p>
@@ -408,6 +420,11 @@
                     <h3>Duplicate sheet numbers</h3>
                     <p>Find sheets that use the same sheet number, helping catch a common issue before publishing.</p>
                 </article>
+                <article class="ppc-feature-card">
+                    <div class="ppc-feature-icon">?</div>
+                    <h3>A tip for every finding</h3>
+                    <p>Select a finding to read a one-sentence instruction on how to fix it. The same tips are included in the CSV export.</p>
+                </article>
             </div>
         </div>
     </section>
@@ -417,7 +434,7 @@
             <div class="section-header">
                 <span class="section-tag">How It Works</span>
                 <h2>From drawing to a clearer checklist in a few clicks</h2>
-                <p>Run the check, review the findings, fix what matters and check again.</p>
+                <p>Run the check, review the findings, fix what matters and check again</p>
             </div>
             <div class="ppc-workflow-grid">
                 <div class="ppc-workflow-step">
@@ -433,17 +450,17 @@
                 <div class="ppc-workflow-step">
                     <div class="ppc-step-number">3</div>
                     <h3>Review findings</h3>
-                    <p>Read errors, warnings and information grouped by layout.</p>
+                    <p>Read errors, warnings and information. Inside each group, whole-drawing findings come first, then Model, then layouts in tab order.</p>
                 </div>
                 <div class="ppc-workflow-step">
                     <div class="ppc-step-number">4</div>
-                    <h3>Jump to a layout</h3>
-                    <p>Double-click a finding to jump straight to the related layout.</p>
+                    <h3>Jump to the problem</h3>
+                    <p>Select a finding to see how to fix it. Double-click to jump to its layout, or to the Model tab for model space findings.</p>
                 </div>
                 <div class="ppc-workflow-step">
                     <div class="ppc-step-number">5</div>
                     <h3>Re-run or export</h3>
-                    <p>Check again after fixes or export the findings to CSV to share the list.</p>
+                    <p>Check again after fixes, or export the findings with their fix tips to CSV to share the list.</p>
                 </div>
             </div>
         </div>
@@ -478,12 +495,20 @@
                     <p>No. It reads the drawing and reports findings. It does not modify the DWG or send your drawing data anywhere.</p>
                 </div>
                 <div class="ppc-faq-item">
+                    <h3>What does “Whole drawing” mean in the Layout column?</h3>
+                    <p>Xrefs, images and fonts are shared by every layout, so their findings belong to the drawing as a whole. Findings in model space show “Model”, and all other findings show the name of their layout. A whole-drawing row has no layout to open, so double-clicking it shows the fix tip instead.</p>
+                </div>
+                <div class="ppc-faq-item">
+                    <h3>Why does it report objects on the Defpoints layer?</h3>
+                    <p>Defpoints is a non-plotting layer, so anything placed on it is visible on screen but never printed. AutoCAD also stores dimension definition points there, and those points are ignored.</p>
+                </div>
+                <div class="ppc-faq-item">
                     <h3>Can it find every title-block sheet number?</h3>
                     <p>Title-block checks look for block attributes with common names such as SHEET_NUMBER, SHEETNO or DWG_NO. If your sheet number is plain text rather than an attribute, that specific check cannot detect it.</p>
                 </div>
                 <div class="ppc-faq-item">
                     <h3>How do I install it?</h3>
-                    <p>Close AutoCAD, run the installer (administrator rights are not required), then start AutoCAD. When prompted to load Pre-Plot Check, choose “Always Load”. The prompt appears because the plugin is not digitally signed.</p>
+                    <p>Close AutoCAD and run the installer. It installs for the current user in <code>%APPDATA%\Autodesk\ApplicationPlugins</code>, so administrator rights are not required. Then start AutoCAD and, when it asks about loading Pre-Plot Check, choose “Always Load”. The prompt appears because the plugin is not digitally signed.</p>
                 </div>
                 <div class="ppc-faq-item">
                     <h3>How do I uninstall it?</h3>
@@ -505,8 +530,7 @@
                     </a>
                     <a href="#checks" class="button outline large">Review Features</a>
                 </div>
-                <div class="ppc-download-meta">Free · AutoCAD 2024–2027 · 64-bit Windows</div>
-				
+                <div class="ppc-download-meta">Free · Version 0.3.0 · AutoCAD 2024-2027 · 64-bit Windows</div>
 
 <div style="margin-top:20px; padding:14px 18px; background:#F8FAFC; border:1px solid #E5EAF2; border-radius:12px; color:#475569; font-size:13px; line-height:1.6; text-align:center;">
     <div style="display:block; margin-bottom:6px; color:#35516D; font-size:14px; font-weight:700;">
@@ -519,7 +543,6 @@
         Only proceed if you downloaded the file from the official Toritex website and trust the source. If you are unsure, do not run it.
     </div>
 </div>
-
 
             </div>
             <p class="ppc-smallprint">This is an early version. If it misses an issue you expected it to catch, or flags something it should not, feedback is welcome.</p>
