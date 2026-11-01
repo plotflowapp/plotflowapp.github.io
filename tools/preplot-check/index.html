@@ -218,6 +218,8 @@
         .ppc-faq-item h3 { margin-bottom: 9px; font-size: 18px; }
         .ppc-faq-item p { font-size: 15px; }
         .ppc-download-meta { margin-top: 18px; color: rgba(255,255,255,.78); font-size: 13px; }
+        .ppc-download-hash { margin-top: 8px; color: rgba(255,255,255,.7); font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
+        .ppc-download-hash span { font-family: Consolas, "Courier New", monospace; }
         .ppc-download .section-tag { background: rgba(255,255,255,.14); color: #fff; }
         .ppc-download h2 { color: #fff; margin: 22px 0 18px; }
         .ppc-download p { max-width: 720px; margin: 0 auto 32px; color: rgba(255,255,255,.88); }
@@ -514,6 +516,10 @@
                     <h3>How do I uninstall it?</h3>
                     <p>Open Windows Settings → Apps and uninstall “Pre-Plot Check for AutoCAD”.</p>
                 </div>
+                <div class="ppc-faq-item">
+                    <h3>How can I check that my download is genuine?</h3>
+                    <p>The download section shows a SHA-256 checksum, a kind of fingerprint of the file. Open PowerShell in the folder with the download and run <code>Get-FileHash .\PrePlotCheck-Setup.zip -Algorithm SHA256</code>. If the result matches the value shown here, the file is exactly the one published on this page. If it does not match, do not run the installer and write to tools@toritex.com.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -531,6 +537,7 @@
                     <a href="#checks" class="button outline large">Review Features</a>
                 </div>
                 <div class="ppc-download-meta">Free · Version 0.3.0 · AutoCAD 2024-2027 · 64-bit Windows</div>
+                <div class="ppc-download-hash">SHA-256 of PrePlotCheck-Setup.zip: <span>19D55F027C8EDA773334219182F5ECD44EE733E47C4AB65959A8F820FB27C0F6</span></div>
 
 <div style="margin-top:20px; padding:14px 18px; background:#F8FAFC; border:1px solid #E5EAF2; border-radius:12px; color:#475569; font-size:13px; line-height:1.6; text-align:center;">
     <div style="display:block; margin-bottom:6px; color:#35516D; font-size:14px; font-weight:700;">
