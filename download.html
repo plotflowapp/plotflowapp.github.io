@@ -117,7 +117,37 @@
 </div>
 </section>
 </main>
+<!-- Тестовый блок кнопок оплаты Toritex (Paddle Sandbox) -->
+<div id="toritex-test-checkout" style="padding: 16px; border: 1px dashed #888; margin: 20px 0;">
+  <button type="button" onclick="openToritexCheckout('pri_01m7z3enarnj1k2qtpbtqcrt5y')">
+    Test Individual ($49)
+  </button>
+  <button type="button" onclick="openToritexCheckout('pri_01m7z4en7bfbjda3c8ep6f7c43')">
+    Test Studio 5 ($199)
+  </button>
+  <button type="button" onclick="openToritexCheckout('pri_01m7z4g4f7axqjhk97qrfpkhs3')">
+    Test Studio 15 ($449)
+  </button>
+</div>
 
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+  Paddle.Environment.set("sandbox");
+  Paddle.Initialize({
+    token: "test_ceb9d50e015fbc59001cefbaf47"
+  });
+
+  function openToritexCheckout(priceId) {
+    Paddle.Checkout.open({
+      items: [
+        {
+          priceId: priceId,
+          quantity: 1
+        }
+      ]
+    });
+  }
+</script>
 <footer class="footer">
 <div class="container footer-content">
 <div><div class="logo"><span class="logo-mark">T</span><span>Toritex</span></div><p>Batch PDF publishing for AutoCAD.</p></div>
