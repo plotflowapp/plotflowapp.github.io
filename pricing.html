@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Pricing — Toritex for AutoCAD</title>
+    <title>Pricing - Toritex for AutoCAD</title>
 
     <link rel="canonical" href="https://toritex.com/pricing.html">
 
     <meta name="description"
-        content="Toritex pricing: a permanent one-time license for batch PDF publishing in AutoCAD, with a 30-day fully functional free trial.">
+        content="Toritex pricing: permanent one-time licenses for batch PDF publishing in AutoCAD, with a 30-day fully functional free trial.">
 
     <meta name="theme-color" content="#35516D">
 
-    <meta property="og:title" content="Toritex — Pricing">
+    <meta property="og:title" content="Toritex - Pricing">
     <meta property="og:description"
-        content="A simple one-time license for batch PDF publishing in AutoCAD.">
+        content="Simple one-time licenses for batch PDF publishing in AutoCAD.">
     <meta property="og:type" content="website">
 
     <link rel="icon" href="assets/logo/favicon.svg">
@@ -27,15 +27,16 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="site.css">
 
     <style>
         .pricing-hero {
-            padding: 92px 0 54px;
+            padding: 104px 0 36px;
             text-align: center;
         }
 
         .pricing-hero h1 {
-            margin: 18px auto 18px;
+            margin: 16px auto 16px;
             max-width: 760px;
         }
 
@@ -47,34 +48,46 @@
             line-height: 1.8;
         }
 
-        .pricing-card-wrap {
-            padding: 10px 0 92px;
+        .plans-wrap {
+            padding: 0 0 56px;
+            scroll-margin-top: 90px;
         }
 
-        .pricing-card {
-            max-width: 560px;
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            max-width: 1000px;
             margin: 0 auto;
+        }
+
+        .plan {
+            display: flex;
+            flex-direction: column;
+            padding: 32px 28px;
+            text-align: center;
             background: #fff;
             border: 1px solid var(--border);
             border-radius: 22px;
+            box-shadow: var(--shadow-small);
+        }
+
+        .plan.featured {
+            border-color: var(--primary);
             box-shadow: var(--shadow-medium);
-            overflow: hidden;
         }
 
-        .pricing-card-top {
-            padding: 38px 40px 34px;
-            text-align: center;
+        .plan h2 {
+            margin: 0 0 6px;
+            font-size: 26px;
+            letter-spacing: -.5px;
         }
 
-        .pricing-card-top h2 {
-            margin: 0 0 10px;
-            font-size: 27px;
-        }
-
-        .pricing-subtitle {
-            margin: 0 auto 26px;
+        .plan-for {
+            min-height: 28px;
+            margin: 0;
             color: var(--text-light);
-            line-height: 1.7;
+            font-size: 15px;
         }
 
         .price {
@@ -82,11 +95,11 @@
             align-items: baseline;
             justify-content: center;
             gap: 8px;
-            margin: 10px 0 6px;
+            margin: 16px 0 4px;
         }
 
         .price-amount {
-            font-size: 58px;
+            font-size: 52px;
             line-height: 1;
             font-weight: 700;
             letter-spacing: -2px;
@@ -99,44 +112,65 @@
         }
 
         .price-note {
+            margin: 0 0 24px;
             color: var(--text-light);
             font-size: 14px;
-            margin: 0 0 28px;
         }
 
-        .pricing-card .button {
+        .plan .button {
             width: 100%;
+            margin-top: auto;
         }
 
-        .pricing-list {
-            border-top: 1px solid var(--border);
-            padding: 30px 40px 34px;
-            list-style: none;
+        .checkout-note {
+            margin: 18px 0 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .includes {
+            max-width: 1000px;
+            margin: 22px auto 0;
+            padding: 28px 36px 30px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            box-shadow: var(--shadow-small);
+        }
+
+        .includes h3 {
+            margin: 0 0 18px;
+            font-size: 20px;
+        }
+
+        .includes ul {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px 32px;
             margin: 0;
+            padding: 0;
+            list-style: none;
         }
 
-        .pricing-list li {
+        .includes li {
             display: flex;
             gap: 12px;
-            margin: 0 0 17px;
             line-height: 1.6;
-        }
-
-        .pricing-list li:last-child {
-            margin-bottom: 0;
+            color: var(--text);
         }
 
         .pricing-check {
             flex: 0 0 auto;
             font-weight: 700;
+            color: var(--success);
         }
 
         .pricing-details {
-            padding: 0 0 92px;
+            padding: 0 0 64px;
         }
 
         .pricing-details .section-header {
-            margin-bottom: 34px;
+            margin-bottom: 30px;
         }
 
         .pricing-points {
@@ -164,9 +198,10 @@
         }
 
         .pricing-cta {
-            padding: 76px 0 92px;
+            padding: 56px 0 64px;
             text-align: center;
-            background: var(--background-alt);
+            background: #fff;
+            border-top: 1px solid var(--border);
         }
 
         .pricing-cta h2 {
@@ -184,15 +219,33 @@
             margin: 0 5px;
         }
 
+        @media (max-width: 900px) {
+            .plans {
+                grid-template-columns: 1fr;
+                max-width: 460px;
+            }
+
+            .includes ul {
+                grid-template-columns: 1fr;
+            }
+
+            .plan-for {
+                min-height: 0;
+            }
+        }
+
         @media (max-width: 800px) {
             .pricing-points {
                 grid-template-columns: 1fr;
             }
 
-            .pricing-card-top,
-            .pricing-list {
-                padding-left: 26px;
-                padding-right: 26px;
+            .includes {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .pricing-hero {
+                padding-top: 92px;
             }
         }
     </style>
@@ -204,9 +257,9 @@
     <div class="container">
 
         <a class="logo" href="index.html">
-           <div class="logo-square">
-    <img src="assets/toritex-logo.png" alt="Toritex">
-</div>
+            <div class="logo-square">
+                <img src="assets/toritex-logo.png" alt="Toritex">
+            </div>
             <span>Toritex</span>
         </a>
 
@@ -218,9 +271,8 @@
         </nav>
 
         <div class="header-actions">
-            <a class="button primary large" href="download.html">
-                Start Free Trial
-            </a>
+            <a class="button outline" href="pricing.html#buy">Buy</a>
+            <a class="button primary" href="download.html"><span class="hide-sm">Start </span>Free Trial</a>
         </div>
 
     </div>
@@ -234,8 +286,8 @@
         <span class="section-tag">SIMPLE PRICING</span>
 
         <h1>
-            One license.
-            <span>One payment.</span>
+            One license,
+            <span>one payment</span>
         </h1>
 
         <p>
@@ -247,46 +299,59 @@
 </section>
 
 
-<section class="pricing-card-wrap">
+<section class="plans-wrap" id="buy">
     <div class="container">
 
-        <div class="pricing-card">
+        <div class="plans">
 
-            <div class="pricing-card-top">
-
-                <h2>Toritex Permanent License</h2>
-
-                <p class="pricing-subtitle">
-                    Full Toritex functionality after activation.
-                    No recurring subscription.
-                </p>
-
+            <div class="plan featured">
+                <h2>Individual</h2>
+                <p class="plan-for">For a single user</p>
                 <div class="price">
                     <span class="price-amount">$49</span>
                     <span class="price-label">USD</span>
                 </div>
-
-                <p class="price-note">
-                    One-time payment · permanent license
-                </p>
-
-                <!-- Replace this link with the final Paddle/Gumroad checkout URL. -->
-                <a class="button primary large" href="download.html">
-                    Buy Toritex
-                </a>
-
+                <p class="price-note">One-time payment · permanent license</p>
+                <a class="button primary large" href="mailto:tools@toritex.com?subject=Toritex%20Individual%20license" data-plan="individual">Buy Individual</a>
             </div>
 
-            <ul class="pricing-list">
+            <div class="plan">
+                <h2>Studio 5</h2>
+                <p class="plan-for">For a small team</p>
+                <div class="price">
+                    <span class="price-amount">$199</span>
+                    <span class="price-label">USD</span>
+                </div>
+                <p class="price-note">One-time payment · permanent license</p>
+                <a class="button outline large" href="mailto:tools@toritex.com?subject=Toritex%20Studio%205%20license" data-plan="studio5">Buy Studio 5</a>
+            </div>
+
+            <div class="plan">
+                <h2>Studio 15</h2>
+                <p class="plan-for">For a larger team</p>
+                <div class="price">
+                    <span class="price-amount">$449</span>
+                    <span class="price-label">USD</span>
+                </div>
+                <p class="price-note">One-time payment · permanent license</p>
+                <a class="button outline large" href="mailto:tools@toritex.com?subject=Toritex%20Studio%2015%20license" data-plan="studio15">Buy Studio 15</a>
+            </div>
+
+        </div>
+
+        <div class="includes">
+            <h3>Every plan includes</h3>
+            <ul>
                 <li><span class="pricing-check">✓</span><span>Batch export selected layouts from the current drawing</span></li>
                 <li><span class="pricing-check">✓</span><span>Single multi-page PDF or separate PDFs</span></li>
                 <li><span class="pricing-check">✓</span><span>Smart filename templates and reusable presets</span></li>
-                <li><span class="pricing-check">✓</span><span>AutoCAD 2023–2027 (64-bit)</span></li>
+                <li><span class="pricing-check">✓</span><span>AutoCAD 2023-2027 (64-bit)</span></li>
                 <li><span class="pricing-check">✓</span><span>Offline license validation</span></li>
                 <li><span class="pricing-check">✓</span><span>30-day fully functional free trial</span></li>
             </ul>
-
         </div>
+
+        <p class="checkout-note">Secure checkout. Payments are processed by Paddle.</p>
 
     </div>
 </section>
@@ -300,7 +365,7 @@
 
             <h2>
                 Everything you need for
-                everyday PDF publishing.
+                everyday PDF publishing
             </h2>
 
             <p>
@@ -365,58 +430,71 @@
 </main>
 
 
-<footer class="site-footer">
-    <div class="container">
+<footer class="footer">
 
-        <div class="footer-grid">
+    <div class="container footer-grid">
 
-            <div>
-                <a class="logo" href="index.html">
-                    <div class="logo-square"></div>
-                    <span>Toritex</span>
-                </a>
+        <div>
 
-                <p>
-                    Batch PDF Publishing for AutoCAD.
-                    Built for architects, engineers and CAD professionals.
-                </p>
-            </div>
+            <a class="logo footer-brand" href="index.html">
+                <div class="logo-square"><img src="assets/toritex-logo.png" alt=""></div>
+                <span>Toritex</span>
+            </a>
 
-            <div>
-                <h4>Product</h4>
-                <ul>
-                    <li><a href="index.html#features">Features</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="download.html">Start Free Trial</a></li>
-                </ul>
-            </div>
+            <p>Batch PDF Publishing for AutoCAD. Built for architects, engineers and CAD professionals.</p>
 
-            <div>
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="documentation.html">Documentation</a></li>
-                    <li><a href="#">Release Notes</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">GitHub</a></li>
-                </ul>
-            </div>
+            <p>Questions: <a href="mailto:tools@toritex.com?subject=Toritex%20Support">tools@toritex.com</a></p>
 
         </div>
 
-        <div class="footer-bottom">
-            <span>© 2026 Toritex. All rights reserved.</span>
+        <div>
+
+            <h4>Product</h4>
+
+            <ul>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#workflow">Workflow</a></li>
+                <li><a href="pricing.html#buy">Pricing and Buy</a></li>
+                <li><a href="download.html">Start Free Trial</a></li>
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h4>Resources</h4>
+
+            <ul>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="#">Release Notes</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h4>Support</h4>
+
+            <ul>
+                <li><a href="mailto:tools@toritex.com?subject=Toritex%20Support">Contact</a></li>
+                <li><a href="#">GitHub</a></li>
+            </ul>
+
         </div>
 
     </div>
+
+    <div class="container footer-bottom">
+
+        <p>© 2026 Toritex. All rights reserved.</p>
+
+    </div>
+
 </footer>
 
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script src="checkout.js"></script>
 <script src="script.js"></script>
 
 </body>
