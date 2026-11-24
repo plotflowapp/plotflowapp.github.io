@@ -1,0 +1,188 @@
+/* ==========================================================
+   Toritex shared refinements
+   Loaded after style.css on every page of toritex.com.
+   Contains: header buttons, footer with logo, tighter vertical
+   spacing and the buy-button helpers.
+==========================================================*/
+
+
+/* ---------- Header ---------- */
+
+.site-header .container {
+    height: 76px;
+}
+
+.header-actions {
+    margin-left: 40px;
+    gap: 12px;
+    align-items: center;
+}
+
+.header-actions .button {
+    min-width: 0;
+    padding: 12px 24px;
+    font-size: 16px;
+}
+
+.header-actions .button.outline {
+    background: #fff;
+}
+
+
+/* ---------- Vertical spacing (was very airy) ---------- */
+
+.hero {
+    padding-top: 150px;
+    padding-bottom: 80px;
+}
+
+.compatibility {
+    padding: 24px 0;
+}
+
+.section-header {
+    margin-bottom: 44px;
+}
+
+.features,
+.workflow,
+.download,
+.faq {
+    padding: 90px 0;
+}
+
+.faq-list {
+    margin-top: 44px;
+}
+
+.download-card {
+    padding: 70px 56px;
+}
+
+
+/* ---------- Footer ---------- */
+
+.footer {
+    padding: 64px 0 24px;
+}
+
+.footer-grid {
+    align-items: start;
+    gap: 44px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.footer .footer-brand {
+    color: #fff;
+}
+
+.footer-brand .logo-square {
+    width: 42px;
+    height: 42px;
+    padding: 5px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.footer-brand .logo-square img {
+    width: 100%;
+    height: 100%;
+}
+
+.footer p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #94A3B8;
+}
+
+.footer p + p {
+    margin-top: 10px;
+}
+
+.footer p a {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    margin-top: 44px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+}
+
+
+/* ---------- Buy buttons ---------- */
+
+.button[data-plan] {
+    cursor: pointer;
+}
+
+
+/* ---------- Tablet and mobile ---------- */
+
+@media (max-width: 768px) {
+
+    .site-header .container {
+        height: 72px;
+    }
+
+    .logo {
+        font-size: 26px;
+        gap: 10px;
+    }
+
+    .header-actions {
+        margin-left: 0;
+        gap: 8px;
+    }
+
+    .header-actions .button {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 56px;
+    }
+
+    .features,
+    .workflow,
+    .download,
+    .faq {
+        padding: 64px 0;
+    }
+
+    .section-header {
+        margin-bottom: 34px;
+    }
+
+    .download-card {
+        padding: 48px 24px;
+    }
+
+    .footer {
+        padding: 48px 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding-top: 110px;
+    }
+
+    .hide-sm {
+        display: none;
+    }
+}
