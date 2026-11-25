@@ -6,59 +6,86 @@
 <title>Download Toritex</title>
 <link rel="canonical" href="https://toritex.com/download.html">
 <meta name="description" content="Download Toritex for AutoCAD and start a 30-day fully functional trial.">
+<meta name="theme-color" content="#35516D">
+<link rel="icon" href="assets/logo/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="site.css">
 <style>
-.download-hero{padding:90px 0 55px;text-align:center}
+.download-hero{padding:104px 0 36px;text-align:center}
+.download-hero h1{margin:16px auto}
 .download-hero p{max-width:700px;margin:0 auto;font-size:18px;line-height:1.8;color:var(--text-light)}
-.download-card{max-width:760px;margin:0 auto 60px;background:#fff;border:1px solid var(--border);border-radius:22px;padding:40px;box-shadow:var(--shadow-small);text-align:center}
-.download-card p{color:var(--text-light);line-height:1.75}
-.download-note{font-size:14px;margin-top:18px}
-.download-options{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:900px;margin:0 auto 70px}
-.download-option,.step,.requirements{background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px}
-.download-option p,.step p,.requirements li{color:var(--text-light);line-height:1.75}
-.download-section{padding-bottom:70px}
-.section-header{text-align:center;margin-bottom:34px}
-.section-header p{color:var(--text-light)}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:auto}
-.step-number{width:38px;height:38px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;margin-bottom:18px}
+.trial-card{max-width:760px;margin:0 auto 24px;background:#fff;border:1px solid var(--border);border-radius:22px;padding:40px;box-shadow:var(--shadow-small);text-align:center}
+.trial-card h2{margin:0 0 10px}
+.trial-card p{margin:0 0 22px;color:var(--text-light);line-height:1.75}
+.trial-card .download-note{margin:18px 0 0;font-size:14px}
+.download-options{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:900px;margin:0 auto 56px}
+.download-option,.dl-step,.requirements{background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px}
+.download-option h3{margin:0 0 10px}
+.download-option p{margin:0;color:var(--text-light);line-height:1.75}
+.option-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;margin-top:20px}
+.text-link{color:var(--primary);font-weight:600;text-decoration:none}
+.text-link:hover{text-decoration:underline}
+.download-section{padding:0 0 56px}
+.dl-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:auto}
+.dl-step h3{margin:0 0 8px}
+.dl-step p{margin:0;color:var(--text-light);line-height:1.75}
+.dl-step-number{display:flex;align-items:center;justify-content:center;width:38px;height:38px;margin-bottom:16px;border-radius:50%;background:var(--primary);color:#fff;font-weight:600}
 .requirements{max-width:760px;margin:auto}
-.requirements ul{margin:0 0 0 20px}
-.activation{max-width:760px;margin:0 auto 80px;text-align:center;padding:38px;border-radius:22px;background:var(--background-light);border:1px solid var(--border)}
-.activation p{max-width:620px;margin:10px auto 24px;color:var(--text-light);line-height:1.75}
-@media(max-width:760px){.download-hero{padding:60px 0 40px}.download-options,.steps{grid-template-columns:1fr}.download-card{padding:28px 22px}}
+.requirements ul{margin:0 0 0 20px;padding:0}
+.requirements li{color:var(--text-light);line-height:1.75}
+.activation{max-width:760px;margin:0 auto 64px;padding:34px;text-align:center;border-radius:22px;background:#F8FAFC;border:1px solid var(--border)}
+.activation h2{margin:0}
+.activation p{max-width:620px;margin:10px auto 22px;color:var(--text-light);line-height:1.75}
+@media(max-width:760px){.download-hero{padding:92px 0 28px}.download-options,.dl-steps{grid-template-columns:1fr}.trial-card{padding:28px 22px}}
 </style>
 </head>
 <body>
-<header class="header">
-<div class="container nav-container">
-<a href="index.html" class="logo"><span class="logo-mark">T</span><span>Toritex</span></a>
-<nav class="nav">
+
+<header class="site-header">
+<div class="container">
+
+<a class="logo" href="index.html">
+<div class="logo-square">
+<img src="assets/toritex-logo.png" alt="Toritex">
+</div>
+<span>Toritex</span>
+</a>
+
+<nav class="navigation">
 <a href="index.html#features">Features</a>
 <a href="pricing.html">Pricing</a>
 <a href="index.html#faq">FAQ</a>
 <a href="documentation.html">Documentation</a>
-<a href="download.html" class="nav-cta active">Start Free Trial</a>
 </nav>
+
+<div class="header-actions">
+<a class="button outline" href="pricing.html#buy">Buy</a>
+<a class="button primary" href="download.html"><span class="hide-sm">Start </span>Free Trial</a>
+</div>
+
 </div>
 </header>
 
 <main>
 <section class="download-hero">
 <div class="container">
-<span class="eyebrow">DOWNLOAD TORITEX</span>
-<h1>Start your 30-day free trial.</h1>
+<span class="section-tag">DOWNLOAD TORITEX</span>
+<h1>Start your 30-day free trial</h1>
 <p>Try the full version of Toritex and batch-publish AutoCAD layouts to PDF without a subscription or an always-online connection.</p>
 </div>
 </section>
 
 <section>
 <div class="container">
-<div class="download-card">
+<div class="trial-card">
 <h2>Toritex for Windows</h2>
 <p>Download the Toritex installer and start your fully functional 30-day trial.</p>
 <!-- Replace # with the final MSI download URL when ready. -->
 <a href="#" class="button primary large">Download Toritex Trial</a>
-<p class="download-note">Windows · AutoCAD 2023–2027 · 64-bit</p>
+<p class="download-note">Windows · AutoCAD 2023-2027 · 64-bit</p>
 </div>
 
 <div class="download-options">
@@ -69,7 +96,10 @@
 <div class="download-option">
 <h3>Ready to buy?</h3>
 <p>Get a permanent Toritex license with a one-time payment. No recurring subscription.</p>
-<br><a href="pricing.html" class="text-link">View pricing →</a>
+<div class="option-actions">
+<a href="mailto:tools@toritex.com?subject=Toritex%20Individual%20license" class="button primary" data-plan="individual">Buy Individual - $49</a>
+<a href="pricing.html#buy" class="text-link">Compare all plans →</a>
+</div>
 </div>
 </div>
 </div>
@@ -78,14 +108,14 @@
 <section class="download-section">
 <div class="container">
 <div class="section-header">
-<span class="eyebrow">HOW IT WORKS</span>
-<h2>From download to your first PDF in minutes.</h2>
+<span class="section-tag">HOW IT WORKS</span>
+<h2>From download to your first PDF in minutes</h2>
 <p>No complicated setup. Just install Toritex and start publishing.</p>
 </div>
-<div class="steps">
-<div class="step"><div class="step-number">1</div><h3>Download</h3><p>Download and install the Toritex MSI package on your Windows computer.</p></div>
-<div class="step"><div class="step-number">2</div><h3>Start AutoCAD</h3><p>Open your drawing and launch Toritex from the AutoCAD Ribbon or with the TORITEX command.</p></div>
-<div class="step"><div class="step-number">3</div><h3>Try for 30 days</h3><p>Use the full functionality of Toritex during the 30-day trial period.</p></div>
+<div class="dl-steps">
+<div class="dl-step"><div class="dl-step-number">1</div><h3>Download</h3><p>Download and install the Toritex MSI package on your Windows computer.</p></div>
+<div class="dl-step"><div class="dl-step-number">2</div><h3>Start AutoCAD</h3><p>Open your drawing and launch Toritex from the AutoCAD Ribbon or with the TORITEX command.</p></div>
+<div class="dl-step"><div class="dl-step-number">3</div><h3>Try for 30 days</h3><p>Use the full functionality of Toritex during the 30-day trial period.</p></div>
 </div>
 </div>
 </section>
@@ -93,7 +123,7 @@
 <section class="download-section">
 <div class="container">
 <div class="section-header">
-<span class="eyebrow">SYSTEM REQUIREMENTS</span>
+<span class="section-tag">SYSTEM REQUIREMENTS</span>
 <h2>What you need</h2>
 </div>
 <div class="requirements">
@@ -117,45 +147,73 @@
 </div>
 </section>
 </main>
-<!-- Тестовый блок кнопок оплаты Toritex (Paddle Sandbox) -->
-<div id="toritex-test-checkout" style="padding: 16px; border: 1px dashed #888; margin: 20px 0;">
-  <button type="button" onclick="openToritexCheckout('pri_01m7z3enarnj1k2qtpbtqcrt5y')">
-    Test Individual ($49)
-  </button>
-  <button type="button" onclick="openToritexCheckout('pri_01m7z4en7bfbjda3c8ep6f7c43')">
-    Test Studio 5 ($199)
-  </button>
-  <button type="button" onclick="openToritexCheckout('pri_01m7z4g4f7axqjhk97qrfpkhs3')">
-    Test Studio 15 ($449)
-  </button>
+
+<footer class="footer">
+
+<div class="container footer-grid">
+
+<div>
+
+<a class="logo footer-brand" href="index.html">
+<div class="logo-square"><img src="assets/toritex-logo.png" alt=""></div>
+<span>Toritex</span>
+</a>
+
+<p>Batch PDF Publishing for AutoCAD. Built for architects, engineers and CAD professionals.</p>
+
+<p>Questions: <a href="mailto:tools@toritex.com?subject=Toritex%20Support">tools@toritex.com</a></p>
+
 </div>
+
+<div>
+
+<h4>Product</h4>
+
+<ul>
+<li><a href="index.html#features">Features</a></li>
+<li><a href="index.html#workflow">Workflow</a></li>
+<li><a href="pricing.html#buy">Pricing and Buy</a></li>
+<li><a href="download.html">Start Free Trial</a></li>
+</ul>
+
+</div>
+
+<div>
+
+<h4>Resources</h4>
+
+<ul>
+<li><a href="documentation.html">Documentation</a></li>
+<li><a href="#">Release Notes</a></li>
+<li><a href="#">Privacy Policy</a></li>
+</ul>
+
+</div>
+
+<div>
+
+<h4>Support</h4>
+
+<ul>
+<li><a href="mailto:tools@toritex.com?subject=Toritex%20Support">Contact</a></li>
+<li><a href="#">GitHub</a></li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="container footer-bottom">
+
+<p>© 2026 Toritex. All rights reserved.</p>
+
+</div>
+
+</footer>
 
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
-<script>
-  Paddle.Environment.set("sandbox");
-  Paddle.Initialize({
-    token: "test_ceb9d50e015fbc59001cefbaf47"
-  });
+<script src="checkout.js"></script>
+<script src="script.js"></script>
 
-  function openToritexCheckout(priceId) {
-    Paddle.Checkout.open({
-      items: [
-        {
-          priceId: priceId,
-          quantity: 1
-        }
-      ]
-    });
-  }
-</script>
-<footer class="footer">
-<div class="container footer-content">
-<div><div class="logo"><span class="logo-mark">T</span><span>Toritex</span></div><p>Batch PDF publishing for AutoCAD.</p></div>
-<div class="footer-links">
-<a href="#">Release Notes</a><a href="#">Privacy Policy</a><a href="#">Contact</a><a href="index.html">Home</a>
-</div>
-</div>
-<div class="container footer-bottom"><p>© 2026 Toritex. All rights reserved.</p></div>
-</footer>
 </body>
 </html>
